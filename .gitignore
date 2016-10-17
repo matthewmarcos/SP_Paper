@@ -3,8 +3,6 @@
 *.dvi
 *.log
 *.gz
-*.eps
-*.jpg
 *.bbl
 *.blg
 *.vscodeLog
