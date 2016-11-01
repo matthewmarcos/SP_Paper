@@ -57,22 +57,23 @@ Studies have linked social functioning to mental health and adjustment to colleg
 
     \subsection{Proposed Solution}
     In order to maximize the number of compatible roommates on campus, we will be making a roommate-matching application for UPLB. Unlike other roommate matching applications that exist today, we will target students of \UPLB that are looking for roommates. Students of \UPLB  have different needs and preferences to working class people, so we cannot use existing roommate matching applications. In addition, there are no roommate matching applications that cater to the UPLB area or the Philippines. It is about time we have one for campus.
+\pubidadjcol
 % Similar Applications
 \section{Similar Applications}
-\pubidadjcol
-These applications have more similarities than differences. They ask the user if they are looking for a place to stay, or if they have a room and are looking for someone to stay with them. Then, the user is \textit{bombarded} with a long questionnaire that he has to fill out. It covers most of the basic criteria you would have when looking for a room. The union of questions asked in both websites can be seen in the appendices.
+There are existing roommate finding tools. These have more similarities than differences. They ask the user if they are looking for a place to stay, or if they have a room and are looking for someone to stay with them. Then, the user is \textit{bombarded} with a long questionnaire that he has to fill out. It covers most of the basic criteria you would have when looking for a room. The union of questions asked in both websites can be seen in the appendices.
 
-Both applications have similar questions, but have subtle insignificant differences. Roommates.com requires you to log in even before you start filling out the questionnaire. Roommie Match does not. However, in order to get a match, you will have to provide your credentials. Some people may find this surreptitious, as users will be forced togive their credentials after they have already filled out a long form.
+% Both applications have similar questions, but have subtle insignificant differences. Roommates.com requires you to log in even before you start filling out the questionnaire. Roommie Match does not. However, in order to get a match, you will have to provide your credentials. Some people may find this surreptitious, as users will be forced togive their credentials after they have already filled out a long form.
+\subsection{Roommates.com}
+Roommate.com\cite{roommates.com} is a web application that caters to people looking for roommates in the United States of America. It can be accessed by going to \textit{www.roommates.com}. The home page enumerates cities where the application most often used, such as Las Vegas, Houston, Atlanta, Los Angeles, New York, etc....
 
-Roommate.com\cite{roommates.com} is an application that caters to people looking for roommates in the United States of America. It can be accessed by going to \textit{www.roommates.com}. The home page lists cities where the appliication is used the most such as Las Vegas, Houston, Atlanta, Los Angeles, New York, etc. - all of which are American.
+Users are required to create an account to use the service. Account creation is free regardless of your location. Among its listed features for free accounts include: Photo profile, 2-way matching, and the freedom to contact potential roommates. The application has a premium account option, which is required to read messages sent to you by other users in the application. It costs \$5.99 for three days, roughly \$20 dollars for 30 days, and \$30 dollars for 60 days.
 
-Anybody can create an account for free regardless of your location. Among its listed features for free accounts include: Photo profile, 2-way matching, and the freedom to contact potential roommates. The application has a premium account option, which is required to read messages sent to you by other users in the application. It costs \$5.99 for three days, roughly \$20 dollars for 30 days, and \$30 dollars for 60 days.
+Another feature of Roommates.com is the powersearch feature. It is much like Google's advanced search. The user will be redirected to a form that asks some questions (see appendix). Once the user has filled out the form, a list of matching roommates will appear. The user is able to see the profiles of the matched individuals, containing the information they wrote when creating an account. The only way to contact a matched person is by sending them a message with the built in messaging system. Sending messages is free, but reading them requires a premium account. Therefore, you need to be a paying user to fully utilize Roommates.com.
 
-Another feature of Roommates.com is the powersearch feature. It is much like Google's advance search. The user will be redirected to a form that asks some questions (see appendix). Once the user has filled out the form, then a list of matching roommates will appear.
+Roommate.com is not feasible for use in UPLB because there are no locations near the \UPLB that come up in the list of city selections. The form also forces the user to specify his state - a piece of information that is irrelevant for people living outside the United States of America. The website has a lot of javascript alerts and prompts when navigating, which is an anti-pattern to most modern web applications (as of this writing in 2016). Finally, a free user won't be able to get any utility out of it without paying.
 
-Roommate.com is not feasible for use in UPLB because there are no locations near the \UPLB that come up in the list of city selections. The form also forces the user to specify his state - a piece of information that is irrelevant for people living outside the United States of America. The website has a lot of javascript alerts and prompts when navigating, which is an anti-pattern to most modern web applications (as of this writing in 2016).
-
-Roommiematch is another roommate match making algorithm that caters to some First-world countries.
+\subsection{Roommiematch.com}
+Roommiematch is another roommate match making web application that caters to some cities in Canada and the United States of America. Unlike Roommates.com, Roommiematch starts asking users about their preferences without requiring them to create an account. It also caters to fewer cities than Roommates.com.
 
 Tinder is an application we have to review as well. In 2015, it has an estimated 50 million users\cite{tinderstat2}, 80\% of which were were millenials, or individuals born after 1982 \cite{tinderstat}\cite{millenial}. It is intuitive to use, and has a pattern that is easily understood by millenials.
 
@@ -96,6 +97,18 @@ Tinder is an application we have to review as well. In 2015, it has an estimated
 % Please look at the IEEE guidelines
 \section{Roommate.com powersearch questions} %Mandatory title to specify an appendix
 \begin{enumerate}
+    \item Are you looking for a room?
+    \begin{itemize}
+        \item I am looking for a room
+        \item I have a room available for rent
+        \begin{itemize}
+            \item Current household composition (How many people currently living there)
+            \item Furnishing of dwelling
+            \item Parking availability
+            \item Does the room have its own bathroom
+            \item Additional amenities (See to match to questions enumerated below)
+        \end{itemize}
+    \end{itemize}
     \item Who you are looking for
     \begin{itemize}
         \item Straight female
