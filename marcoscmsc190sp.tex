@@ -1,6 +1,7 @@
 % Remove 12pt, change draftcls -> final when doing final.
 \documentclass[journal]{./IEEE/IEEEtran}
 \usepackage{cite,graphicx}
+\graphicspath{ {images/} }
 
 \newcommand{\SPTITLE}{Room-8! - A Matchmaking Application for Finding College Roommates}
 \newcommand{\ADVISEE}{Joseph Matthew R. Marcos}
@@ -96,14 +97,23 @@ Tinder is all about the pictures and description a user entered. The user is sho
 \section{The Ideal Roommate Matching application}
 If we were to make the ideal roommate matchmaking application, we want it to be similar to existing applications but tailor it in such a way that it caters to the interests of UPLB students. It has to be intuitive, easy to use, clean, and consistent. Finally, it has to have a \textit{no strings attached} approach, meaning we do not want to trap the user into giving us their credit card number out of frustration. In addition, we have to follow modern user experience strategies and plan out its features well to make it more relevant than the previous applications mentioned.
 
-There are many papers that list the factors that facilitate friendship. However, most of them are dependent on what happens during the first meeting or interaction. Some of the criteria are subjective, such as honesty, and may vary from person to person. Other criteria cannot be controlled or measured with the application, such as honesty, virtues, and trustworthiness. Due to the lack of an empirical basis to measure these constructs, we can already predict that not all matched roommates will be friends.
+There are many papers that list the factors that facilitate friendship. However, most of them are dependent on what happens during the first meeting or interaction. Some of the criteria are subjective, such as honesty, which  vary from person to person. Other criteria cannot be controlled or measured with the application, such as honesty, virtues, and trustworthiness. Due to the lack of an empirical basis to measure these constructs, we can already predict that not all matched roommates will be friends.
 
 There are a few elements of friendship chemistry that we can assess and use to match people together. Friendship chemistry can be broken down into five main elements - namely reciprocal candor, mutual interest, personableness, similarity, and physical attraction\cite{f_chemistry}. Each of these elements can also be broken down and measured relatively well. When people were asked about these elements, it showed that people who experienced friendship chemistry were analogous\cite{f_chemistry} - which reflects other research that friends are people with many similarities\cite{similar}. They claimed to have nearly identical values and morals, and they understand each other well\cite{f_chemistry}. Agreeability between the parties is also a significant factor when predicting friendship chemistry \cite{f_chemistry}.
 
 A ideal roommate matchmaking application must be able to match users based on similarities. But it must still be able to match people who are not exactly identical.
 
 % MATERIALS AND METHODS
-\section{Materials and Methods}
+\section{Methods}
+The application will consist of a database, the server, and the client. \\
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Architecture}
+\caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
+\end{figure}
+
+
 % Irving's Algorithm
 \subsection{Irving's Algorithm}
 Irving's Algorithm is an algorithm used to match two elements of the same set together. It solves what is commonly known as the Stable Roommates problem.
