@@ -105,14 +105,24 @@ A ideal roommate matchmaking application must be able to match users based on si
 
 % MATERIALS AND METHODS
 \section{Methods}
-The application will consist of a database, the server, and the client. \\
 
+\subsection{Architecture}
+The application will consist of a database, the server, and the client. A simplified version of the projected architecture is shown below.
+\\
+% Architecture diagram
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{Architecture}
 \caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
 \end{figure}
 
+For the database management system (DBMS), we shall choose MySQL. It is a very versatile DBMS and is easy to set up in most machines. Its popularity is the result of its good documentation and support for any issues that may arise. We will also leverage the use of Database Triggers to run our recommender system - the part of the application that does the recommendation. Since the application is model-heavy, we also need to perform complicated transactions, hence the need for stored procedures and stored functions. Such features have simple / limiting implementations in NoSQL DBMS.
+
+The application will be hosted with a Nodejs server with the Expressjs microframework. They were designed with user productivity in mind without limiting scalability and expressiveness on the code. It is also good at handling IO events from the user, as it is event driven, meaning you can focus on the application logic.
+
+For the client side frameworks, we will do client side rendering with Reactjs with Redux. React is easy to use for this kind of system because its separation of concerns make it easy to maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data changes. The User Interface will use MaterializeCSS because it is lightweight and simple. We do not need a lot of the features of Bootstrap 4.
+
+\subsection{The Recommender System}
 
 % Irving's Algorithm
 \subsection{Irving's Algorithm}
@@ -129,6 +139,23 @@ Gale-Shapeley's Algorithm is an algorithm used to match two elements from differ
 
 % CONCLUSION AND FUTURE WORK
 % \section{Conclusion and Future Work}
+
+\newpage
+% ACKNOWLEDGMENT
+\section*{Acknowledgment}
+I would like to thank my adviser \ADVISER for her patience.
+
+% BIOGRAPHY
+\begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
+\end{biography}
+
+
+\newpage
+% BIBLIOGRAPHY
+% \bibliography{./cs190-ieee}
+\bibliographystyle{./IEEE/IEEEtran}
+\bibliography{marcoscmsc190sp}
+% \nocite{*}
 
 \newpage
 % APPENDICES
@@ -274,21 +301,4 @@ Gale-Shapeley's Algorithm is an algorithm used to match two elements from differ
     \end{itemize}
 \end{enumerate}
 
-
-\newpage
-% ACKNOWLEDGMENT
-\section*{Acknowledgment}
-I would like to thank my adviser \ADVISER for her patience.
-
-% BIOGRAPHY
-\begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
-\end{biography}
-
-
-\newpage
-% BIBLIOGRAPHY
-% \bibliography{./cs190-ieee}
-\bibliographystyle{./IEEE/IEEEtran}
-\bibliography{marcoscmsc190sp}
-% \nocite{*}
 \end{document}
