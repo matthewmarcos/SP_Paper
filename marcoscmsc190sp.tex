@@ -106,7 +106,7 @@ A ideal roommate matchmaking application must be able to match users based on si
 % MATERIALS AND METHODS
 \section{Methods}
 
-\subsection{Architecture}
+\subsection{Architecture and Technologies}
 The application will consist of a database, the server, and the client. A simplified version of the projected architecture is shown below.
 \\
 % Architecture diagram
@@ -116,21 +116,45 @@ The application will consist of a database, the server, and the client. A simpli
 \caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
 \end{figure}
 
-For the database management system (DBMS), we shall choose MySQL. It is a very versatile DBMS and is easy to set up in most machines. Its popularity is the result of its good documentation and support for any issues that may arise. We will also leverage the use of Database Triggers to run our recommender system - the part of the application that does the recommendation. Since the application is model-heavy, we also need to perform complicated transactions, hence the need for stored procedures and stored functions. Such features have simple / limiting implementations in NoSQL DBMS.
+For the database management system (DBMS), we shall choose MySQL. It is a very versatile DBMS and is easy to set up in most machines. Its popularity is the result of its good documentation and support for any issues that may arise. We will also leverage the use of Database Triggers to run our recommender system - the part of the application that does the initial recommendation of roommates. Since the application is model-heavy, we also need to perform complicated transactions, hence the need for stored procedures and stored functions. Such features have simple / limiting implementations in NoSQL DBMS.
 
 The application will be hosted with a Nodejs server with the Expressjs microframework. They were designed with user productivity in mind without limiting scalability and expressiveness on the code. It is also good at handling IO events from the user, as it is event driven, meaning you can focus on the application logic.
 
-For the client side frameworks, we will do client side rendering with Reactjs with Redux. React is easy to use for this kind of system because its separation of concerns make it easy to maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data changes. The User Interface will use MaterializeCSS because it is lightweight and simple. We do not need a lot of the features of Bootstrap 4.
+For the client side frameworks, we will do client side rendering with Reactjs with Redux. React is easy to use for this kind of system because its separation of concerns make it easy to maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data changes. The User Interface will use MaterializeCSS because it is lightweight and simple.
 
 \subsection{The Recommender System}
+A recommender system is used by applications to predict information and offer content to its users\cite{katarya}. Youtube, for example, uses a recommender system to suggest videos that a viewer might find interesting. Amazon uses a recommender system to advertise products to different shoppers.
 
-% Irving's Algorithm
-\subsection{Irving's Algorithm}
-Irving's Algorithm is an algorithm used to match two elements of the same set together. It solves what is commonly known as the Stable Roommates problem.
+We will use the recommender system as part of the server that creates suggestions for roommates. This is the most important part of the application. It should be able to rate the compatibility of a user against all other users, and give a score based on how similar they are. The results of the recommender system will be shown to the user, who has the liberty of \textit{accepting} or \textit{rejecting} the suggestions. If two users \textit{accept} each other, they have the possibility of being matched - depending on the score they received.
+
+\subsection{User workflow Pattern}
+
+To use \APPNAME , the user must first create an account. The questions listed in the appendix are not going to be asked. Instead, the user will be asked for his/her name, age, address, phone number, and email. After an account is created, the user can sign in and use the application.
+
+To actually get some pairings, the user must fill out his/her roommate preferences. These are broken down into seven forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers will be the criteria used by the application to make initial matches. Each question has an option called "Don't care". This is the option selected by default. If it is selected, that question will not be considered as a constraint when making the matchings.
+
+The user also has to fill out the discovery settings. It contains three questions: \textit{How strict do you want us to be when looking for a match?}, \textit{Are you willing to be paired with users (with | who are also looking for) rooms} and \textit{Are you currently looking for a roommate?}. The first question can be answerable by any integer from 1 - 100. It will serve as the threshold score when displaying matches for the user. The second question will determine the kind of matchmaking algorithm. The third question is a flag. If it is set, the application will start searching for matches to present to the user. If it us unset, the user will not show in anybody's list of matchings or pairings.
+
+The matches will come as a list of profiles. Initially, the users cannot see the contact details of "matched" people. However, they can see the preferences and answers of their "matches". If a match is interesting, a user can choose to accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches can come by. If two people accept each other, they are then paired.
+
+Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application. Paired people can finalize the roommate pairing. This will unset their discovery setting of "Are you looking for a roommate". A user can see the profile of the person he/she is finalized with any time.
+
+If a pair disagrees, they can choose to discard that pairing. The discarded pair will appear in the user's blacklist and will not be matched. A user can remmove blacklisted users.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.5]{Workflow}
+\caption{This is the general workflow of your user}
+\end{figure}
+% Genyan na talaga ang arrow.
 
 % Gale-Shapley's Algorithm
 \subsection{Gale-Shapley's Algorithm}
-Gale-Shapeley's Algorithm is an algorithm used to match two elements from different sets. It solves what is commonly known as the Stable Marriage problem.
+Gale-Shapley's Algorithm is an algorithm used to match two elements from different sets. It solves what is commonly known as the Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to universities, while considering their preferences and the preferences of the university. The result of this algorithm is a stable one-to-one correspondence between the two sets. A stable match is a match where there is no pair of users that both prefer each other but are unmatched. This algorithm will be used if a user who has a room is exclusively looking for someone without a room.
+
+% Irving's Algorithm
+\subsection{Irving's Algorithm}
+Irving's Algorithm is an algorithm used to match two elements of the same set together. It solves what is commonly known as the Stable Roommates problem. It is similar to Gale-Shapley's Algorhtm that it wants to generate all possible stable matches in a set, with the additional constraint that that set has an even cardinality. This algorithm will be used if a user is open to look for any user regardless if he/she has a room or is looking for one as well.
 
 % \section{Proof of methods down here}
 
@@ -143,10 +167,13 @@ Gale-Shapeley's Algorithm is an algorithm used to match two elements from differ
 \newpage
 % ACKNOWLEDGMENT
 \section*{Acknowledgment}
-I would like to thank my adviser \ADVISER for her patience.
+I would like to thank my adviser \ADVISER for her patience. Without it, this paper wouldn't be realized.
+
+\newpage
 
 % BIOGRAPHY
 \begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
+Matthew is a programmer that loves to solve real world problems. As a student of UPLB, he became interested in creating web applications that can help people. On his free time, he likes studying new technologies and reading books on history, technology, and the sciences. He is a fan of sci-fi books by Michael Crichton, and Douglas Preston and Lincoln Child.
 \end{biography}
 
 
