@@ -51,7 +51,7 @@ Studies have linked social functioning to mental health and adjustment to colleg
     \subsection{Why College Roommate Relationships}
     The goal is to make it easier for students to acquire these benefits with less guess work. Students have to develop better interpersonal relationships in college $-$ particularly roommate relationships because these are relationships that are widely experienced by many college students\cite{erb}. Roommates have frequent contact, negotiations of responsibilities and compromises about the living environment, which often include noise level, cleanliness level, sleep/waking hours, visitors, decorations, and bills\cite{erb}. These may become challenges when dealing with each other.
 
-    For many college students, many {"firsts"} add to the challenges of campus life. Usually, roommates are the first {"people of equal status"} they live with, compared to the parent-child relationship they usually experience at home\cite{erb}.
+    For many college students, many {``firsts"} add to the challenges of campus life. Usually, roommates are the first {``people of equal status"} they live with, compared to the parent-child relationship they usually experience at home\cite{erb}.
 
     Unlike friendships, college students may often not choose roommates, causing personality mismatches. Many studies support that roommates, while having the potential to be a boon to a student, can also hinder a student from having a quality college life. According to Erb\cite{erb}, citing Liu\cite{liu}, in a 31,500 sample sized survey in the United States of America, 50.1\% of women and 44.1\% of men experienced “frequent” conflicts with roommates or housemates. In another survey in the same country, 5.6\% of undergraduates reported that difficulties with their roommates have hampered their academic endeavors\cite{erb}. For comparison, 4\% of American students said that alcohol did the same thing\cite{erb}.
 
@@ -136,13 +136,13 @@ A recommender system will be used as part of the server that creates suggestions
 
 To use \APPNAME , the user must first create an account. The questions listed in the appendix are not going to be asked. Instead, the user will be asked for their name, age, address, phone number, and email. After an account is created, the user can sign in and use the application.
 
-To actually get some pairings, the user must fill out their roommate preferences. These are broken down into seven forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers will be the criteria used by the application to make initial matches. Each question has an option called "Don't care". This is the option selected by default. If it is selected, that question will not be considered as a constraint when making the matchings.
+To actually get some pairings, the user must fill out their roommate preferences. These are broken down into seven forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers will be the criteria used by the application to make initial matches. Each question has an option called ``Don't care". This is the option selected by default. If it is selected, that question will not be considered as a constraint when making the matchings.
 
 The user also has to fill out the discovery settings. It contains three questions: \textit{How strict do you want us to be when looking for a match?}, and \textit{Are you currently looking for a roommate?}. The first question can be answerable by any integer from 1 - 100. It will serve as the threshold score when displaying matches for the user. The second question is a flag. If it is set, the application will start searching for matches to present to the user. If it is unset, the user will not show in anybody's list of matchings or pairings.
 
-The matches will come as a list of profiles. Initially, the users cannot see the contact details of "matched" people. However, they can see the preferences and answers of their "matches". If a match is interesting, a user can choose to accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches can come by. If two people accept each other, they are then paired.
+The matches will come as a list of profiles. Initially, the users cannot see the contact details of ``matched" people. However, they can see the preferences and answers of their ``matches". If a match is interesting, a user can choose to accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches can come by. If two people accept each other, they are then paired.
 
-Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application. Paired people can finalize the roommate pairing. This will unset their discovery setting of "Are you looking for a roommate". A user can see the profile of the person he/she is finalized with any time.
+Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application. Paired people can finalize the roommate pairing. This will unset their discovery setting of ``Are you looking for a roommate". A user can see the profile of the person he/she is finalized with any time.
 
 If a pair disagrees, they can choose to discard that pairing. The discarded pair will appear in the user's blacklist and will not be matched. A user can remove blacklisted users.
 
@@ -153,9 +153,19 @@ If a pair disagrees, they can choose to discard that pairing. The discarded pair
 \end{figure}
 % Genyan na talaga ang arrow.
 
+% How matches are scored
+\subsection{How Matches are Scored}
+In order to create potential matches, the compatibility between two users have to be measured. The algorithm initially gives each pair a score of zero. Each question in the questionnaire is worth ten points. If two users have a similar answer, then ten is added to the score. If at least one of the users has selected ``Don't care" for a question, then it is assumed that the user is willing to adjust in that criteria, hence a score of 10 will be added for that question. For questions that provide a slider from 0-10 (e.g. ``Cleanliness level"), then the score that will be added for that question will be $10 - (user A's answer - user B's Answer)$.
+
+This algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for a room.
+
 % Gale-Shapley's Algorithm
-\subsection{Gale-Shapley's Algorithm}
-Gale-Shapley's Algorithm is an algorithm used to match two elements from different sets. It solves what is commonly known as the Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to universities, while considering their preferences and the preferences of the university. The result of this algorithm is a stable one-to-one correspondence between the two sets. A stable match is a match where there is no pair of users that both prefer each other but are unmatched. This algorithm will be used if a user who has a room is exclusively looking for someone without a room. The input of this algorithm will be the initial matches, and the output will be the list of pairings.
+\subsection{Gale-Shapley's Algorithm in Room-8!}
+Gale-Shapley's Algorithm is used to match two elements from different sets. It solves what is commonly known as the Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to universities, while considering their preferences and the preferences of the university\cite{irving}. The result of this algorithm is a set of stable one-to-one correspondences between the two sets. A stable match is a match where there is no pair of users that both prefer each other but are unmatched\cite{marriage}. In this application, the input of this algorithm will be the initial scores of user groups (People who have a room and people without a room). Each user in both groups has an ordered list of users from the other group that are sorted by their score from the matching algorithm. The output will be the list of stable matches between the two groups.
+
+User pairings whose matching score is below the threshold will not be considered by the algorithm. This means that the matching is unacceptable. Gale-Shapley's algorithm allows this\cite{marriage}.
+
+
 
 
 % \section{Proof of methods down here}
@@ -170,9 +180,6 @@ Gale-Shapley's Algorithm is an algorithm used to match two elements from differe
 % ACKNOWLEDGMENT
 \section*{Acknowledgment}
 I would like to thank my adviser \ADVISER for her patience. Without it, this paper wouldn't be realized.
-
-\newpage
-
 % BIOGRAPHY
 \begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
 Matthew is a programmer that loves to solve real world problems. As a student of UPLB, he became interested in creating web applications that remedies the daily problems Filipinos experience. On his free time, he likes studying new technologies and reading books on history, technology, and the sciences. He is a fan of sci-fi books like those by Michael Crichton, and Douglas Preston and Lincoln Child.
@@ -190,7 +197,7 @@ Matthew is a programmer that loves to solve real world problems. As a student of
 % APPENDICES
 \appendices
 % Please look at the IEEE guidelines
-\section{Roommate.com and Roommiematch.com questions} %Mandatory title to specify an appendix
+\section{Some Roommate.com and Roommiematch.com questions} %Mandatory title to specify an appendix
 \begin{enumerate}
     \item Are you looking for a room?
     \begin{itemize}
