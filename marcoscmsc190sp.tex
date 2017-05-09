@@ -208,8 +208,9 @@ UPLB, University of the Philippines Los Ba\~{n}os, Roommate, Roommate matching
 \section{Methods}
 
 \subsection{Architecture and Technologies}
-The application will consist of a database, the server, and the client. A simplified version of the projected architecture is shown below.
-\\
+The application will consist of a database, the server, and the client. A simplified version of the projected
+architecture is shown below.
+
 % Architecture diagram
 \begin{figure}[h]
 \centering
@@ -285,18 +286,74 @@ will not be matched. A user can remove blacklisted users.
 
 % How matches are scored
 \subsection{How Matches are Scored}
-In order to create potential matches, the compatibility between two users have to be measured. The algorithm initially
-gives each pair a score of zero. Each question in the questionnaire is worth ten points. If two users have a similar
-answer, then ten is added to the score. If at least one of the users has selected ``Don't care" for a question, then it
-is assumed that the user is willing to adjust in that criteria, hence a score of 10 will be added for that question. For
-questions that provide a slider from 0-10 (e.g. ``Cleanliness level"), then the score that will be added for that
-question will be $10 - (user A's answer - user B's Answer)$.
+In order to create potential matches, the compatibility between two users have to be measured. For the remainder of the
+section, the user that needs a room will be called \textit{user1} and the user that has a room will be called
+\textit{user2}. The algorithm initially gives each pair a score of zero. The application has 17 criteria for arbitrating
+two users' compatibility. Each criteria in the questionnaire is worth a certain amount of points. The criteria as as
+follows:
 
-This algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for
+    \subsubsection{Cleanliness}
+        The cleanliness criteria is determined by 2 fields from each user:
+        \begin{itemize}
+                \item my\textunderscore cleanliness - A user's self-rating of their cleanliness level.
+                \item preferred\textunderscore cleanliness - A user's preferred cleanliness level for their
+                    potential roommate.
+        \end{itemize}
+
+        The preferred\textunderscore cleanliness of user1 will be compared to user2's my\textunderscore cleanliness and
+        vice versa. A magnetism variable is assigned for each comparison, which can be computed as
+        $$magnetism_1 = 10-user1's cleanliness - user2's preference$$
+        and
+        $$magnetism_2 = 10-user2's cleanliness - user1's preference$$
+
+        The total cleanliness is the arithmetic mean of both magnetism variables
+
+        $$score = (magnetism_1+magnetism_2)/2$$
+
+    \subsubsection{Smoker}
+        The smoking score is determined by comparing user1's smoking preference user2's smoking profile and vice versa.
+        It is similar to the Cleanliness score in that it uses two variables from each user to determine the score.
+        If user1's preference to a smoking partner is equal to user2's smoking profile, 5 is added to the score. If
+        user2's preference to a smoking partner is equal to user1's smoking profile, another 5 is added. This criteria gives a
+        maximum of 10 points.
+
+    \subsubsection{Sex}
+        The sex score is determined exactly the same way as the smoking score is determined.
+
+    \subsubsection{Start Date}
+        If user1's start date is greater than or equal to user2's start date, then it is implied that the room is
+        available when user1 wishes to move in. If this is the case, this criteria will be given a score of 10.
+        Otherwise, it returns a score of 0.
+
+    \subsubsection{Rent Cost}
+        The Rent Cost is a criteria used to determine whether or not a room is within a user's budget.
+        The price range of user1's input is compared to user2's input for the rent cost. The variables that are
+        considered are:
+        \begin{itemize}
+            \item rent\textunderscore start(user1) - User1's self-rating of their cleanliness level.
+            \item rent\textunderscore end(user1) - User1's preferred cleanliness level for their potential roommate.
+            \item rent\textunderscore cost(user2) - User2's monthly rent bill.
+        \end{itemize}
+        If the monthly rent of the room is within the range set by user1, then a score of 10 is given to this criteria.
+        Otherwise, it is scored a 0.
+
+    \subsubsection{Nearby Restaurants}
+        A user looking for a room is given the option whether or not they prefer that there exists some nearby
+        restaurant in their future temporary abode in UPLB. On the other hand, the user who has a room is asked whether
+        or not there exists some nearby restaurant near their room. If user1 answers no, then it does not matter whether
+        or not there is a nearby restaurant to the room, and a score of 10 is given. If user1 answers a yes, then a
+        score of 10 will be given if user2 similarly answers yes. Otherwise, a score of 0 is given.
+
+    \subsubsection{Travel Time to UPLB}
+        This criteria is filled out by the user as the number of minutes it takes for a user to reach UPLB.
+
+
+This scoring algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for
 a room.
 
 % Gale-Shapley's Algorithm
 \subsection{Gale-Shapley's Algorithm in Room-8!}
+
 Gale-Shapley's Algorithm is used to match two elements from different sets. It solves what is commonly known as the
 Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to
 universities, while considering their preferences and the preferences of the university\cite{irving}. The result of this
