@@ -418,7 +418,28 @@ room. The criteria as as follows:
 
     \subsubsection{Guests in Room}
         Some people prefer to have freedom when allowing guests to enter their room, usually for projects and bonding
-        time.
+        time. Some prefer solitude and silence when working on things like their SP paper. A score of 10 should be given
+        if either user selects ``Do not care", or have exactly the same option selected. Otherwise, a score of 0 will be
+        given.
+
+    \subsubsection{Guests Study Area}
+        Some people prefer to have a study area for their guests for groupworks and projects. This criterion checks
+        whether or not a user looking for a room also seeks a study area for guests. If user1 selects ``No", 10 is
+        scored. A 10 is also scored if both users select ``Yes". Otherwise, 0 is scored.
+
+    \subsubsection{Organizations}
+        The organization score is determined by comparing user1's organization preference user2's organization profile and vice versa.
+        It is similar to the Cleanliness score in that it uses two variables from each user to determine the score.
+        If user1's preference to a partner with an organization is equal to user2's organization profile, 5 is added to the score. If
+        user2's preference to a partner with an organization is equal to user1's smoking profile, another 5 is added. This criterion gives a
+        maximum of 10 points.
+
+    \subsubsection{Curfew Time}
+        This criterion checks whether or not user1 is okay with a curfew and if user2's residence has one. If user1 says
+        ``No" and user2 says yes, score 0. If both user1 and user2 respond with ``No", score a 10. If both say yes,
+        check the time constraint and accept if user2's time is later or equal to user1's. If user1 says ``No" and user2
+        says ``Yes", score a 10. If user1's input is ``Do not care", score a 10. If user2's input is ``Do not care",
+        it is treated as a ``No".
 
 % Gale-Shapley's Algorithm
 \subsection{Gale-Shapley's Algorithm in Room-8!}
