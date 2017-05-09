@@ -289,11 +289,12 @@ will not be matched. A user can remove blacklisted users.
 In order to create potential matches, the compatibility between two users have to be measured. For the remainder of the
 section, the user that needs a room will be called \textit{user1} and the user that has a room will be called
 \textit{user2}. The algorithm initially gives each pair a score of zero. The application has 17 criteria for arbitrating
-two users' compatibility. Each criteria in the questionnaire is worth a certain amount of points. The criteria as as
-follows:
+two users' compatibility. Each criteria in the questionnaire is worth a certain amount of points.  This scoring
+algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for a
+room. The criteria as as follows:
 
     \subsubsection{Cleanliness}
-        The cleanliness criteria is determined by 2 fields from each user:
+        The cleanliness criterion is determined by 2 fields from each user:
         \begin{itemize}
                 \item my\textunderscore cleanliness - A user's self-rating of their cleanliness level.
                 \item preferred\textunderscore cleanliness - A user's preferred cleanliness level for their
@@ -302,9 +303,14 @@ follows:
 
         The preferred\textunderscore cleanliness of user1 will be compared to user2's my\textunderscore cleanliness and
         vice versa. A magnetism variable is assigned for each comparison, which can be computed as
-        $$magnetism_1 = 10-user1's cleanliness - user2's preference$$
+
+        \begin{equation}
+            magnetism_1 = 10-user1's\textunderscore cleanliness - user2's\textunderscore preference
+        \end{equation}
         and
-        $$magnetism_2 = 10-user2's cleanliness - user1's preference$$
+        \begin{equation}
+            magnetism_2 = 10-user2's\textunderscore cleanliness - user1's\textunderscore preference
+        \end{equation}
 
         The total cleanliness is the arithmetic mean of both magnetism variables
 
@@ -314,7 +320,7 @@ follows:
         The smoking score is determined by comparing user1's smoking preference user2's smoking profile and vice versa.
         It is similar to the Cleanliness score in that it uses two variables from each user to determine the score.
         If user1's preference to a smoking partner is equal to user2's smoking profile, 5 is added to the score. If
-        user2's preference to a smoking partner is equal to user1's smoking profile, another 5 is added. This criteria gives a
+        user2's preference to a smoking partner is equal to user1's smoking profile, another 5 is added. This criterion gives a
         maximum of 10 points.
 
     \subsubsection{Sex}
@@ -322,19 +328,19 @@ follows:
 
     \subsubsection{Start Date}
         If user1's start date is greater than or equal to user2's start date, then it is implied that the room is
-        available when user1 wishes to move in. If this is the case, this criteria will be given a score of 10.
+        available when user1 wishes to move in. If this is the case, this criterion will be given a score of 10.
         Otherwise, it returns a score of 0.
 
     \subsubsection{Rent Cost}
-        The Rent Cost is a criteria used to determine whether or not a room is within a user's budget.
+        The Rent Cost is a criterion used to determine whether or not a room is within a user's budget.
         The price range of user1's input is compared to user2's input for the rent cost. The variables that are
         considered are:
         \begin{itemize}
-            \item rent\textunderscore start(user1) - User1's self-rating of their cleanliness level.
-            \item rent\textunderscore end(user1) - User1's preferred cleanliness level for their potential roommate.
+            \item rent\textunderscore start(user1) - User1's lower bound for rent cost.
+            \item rent\textunderscore end(user1) - User1's upper bound for rent cost.
             \item rent\textunderscore cost(user2) - User2's monthly rent bill.
         \end{itemize}
-        If the monthly rent of the room is within the range set by user1, then a score of 10 is given to this criteria.
+        If the monthly rent of the room is within the range set by user1, then a score of 10 is given to this criterion.
         Otherwise, it is scored a 0.
 
     \subsubsection{Nearby Restaurants}
@@ -345,15 +351,77 @@ follows:
         score of 10 will be given if user2 similarly answers yes. Otherwise, a score of 0 is given.
 
     \subsubsection{Travel Time to UPLB}
-        This criteria is filled out by the user as the number of minutes it takes for a user to reach UPLB.
+        This criterion is filled out by the user as the number of minutes it takes for a user to reach UPLB.
+        If user1's answer is greater than or equal to user2's answer, then a score of 10 is given. Otherwise, a score of
+        0 is given. 
+
+        When user1's value is greater than or equal to user2's answer, it means that user1 is willing to settle for a
+        longer travel time than what exists in user2's room.
+
+    \subsubsection{General Location}
+        This criterion is used to match the general location of both users. The users' entries for general location are
+        then fuzzy matched to check how similar the user entrues are. The fuzzy matching returns a number as a percent
+        of 100. That percentage match is multiplied as a percent of 10 and is returned as the score. A 100\% match is
+        given a score of 10.
+
+    \subsubsection{Utilities Cost}
+        The Utilities Cost is a criterion used to determine whether or not a room is within a user's budget.
+
+        The user looking for a room is asked whether or not it is acceptable for their potential room to charge their
+        utility bills exclusive of the rent cost. If it is acceptable, then they are prompted for a price range they are
+        willing to settle with.  The price range of user1's input is compared to user2's input for the rent cost. The
+        variables that are considered are:
+        \begin{itemize}
+            \item utilities\textunderscore start(user1) - User1's lower bound for utilities cost.
+            \item utilities\textunderscore end(user1) -  User1's upper bound for utilities cost.
+            \item utilities\textunderscore cost(user2) - User2's monthly utilities bill.
+        \end{itemize}
+        If user2's answer is ``No", then a score of 10 is given".
+        If user2's answer is ``Yes", and user1's answer is ``No", then a score of 0 is given.
+        If both users answer ``Yes", then a score of 10 is given only if the monthly utilities bill of the room is
+        within the range set by user1, then a score of 10 is given to this criterion.
+        Otherwise, a score of 0 is given.
+
+    \subsubsection{Utilities}
+        This criterion is used check which utilities are available in the establishment. There are many subcriteria that
+        constitute the total score of this criterion, namely:
+        \begin{enumerate}
+            \item Airconditioning
+            \item Laundry
+            \item Cooking
+            \item Gas Stove
+            \item Electric Stove
+            \item Microwave
+            \item Water Kettle
+            \item Internet
+            \item Torrenting
+        \end{enumerate}
+
+        For each of the aforementioned subcriteria, a score of 10 is added if user1's answer is equal to user2's answer.
+        An answer of 'Do not care' awards a score of 10 for that subcriterion.
 
 
-This scoring algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for
-a room.
+    \subsubsection{Speed}
+        This criterion is only used if user1 or user2 selects ``Yes" for the internet subcriterion in the
+        Utilities criteria. This criterion compares the internet speed requirement of both users. A score of 10 is
+        given if user2's answer is greater than or equal to user1's answer because it means that the room is able to
+        provide for the internet speed requirement of user1.
+
+    \subsubsection{Study Time}
+        This criterion determines whether or not the potential roommates study at the same time of the day. This is in
+        hopes to provide a cordial understanding when lights and sounds should be turned off.
+
+        The users are given the options of Morning, Evening, Both, Do not care. If either one of the users answers ``Do
+        not care", it is assumed that the user is willing to adjust to the study habits of the other user. For such a
+        situiation, a score of 10 will be given. Otherwise, a score of 10 will only be given if both users have exactly
+        the same answer.
+
+    \subsubsection{Guests in Room}
+        Some people prefer to have freedom when allowing guests to enter their room, usually for projects and bonding
+        time.
 
 % Gale-Shapley's Algorithm
 \subsection{Gale-Shapley's Algorithm in Room-8!}
-
 Gale-Shapley's Algorithm is used to match two elements from different sets. It solves what is commonly known as the
 Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to
 universities, while considering their preferences and the preferences of the university\cite{irving}. The result of this
@@ -380,7 +448,7 @@ matching is unacceptable. Gale-Shapley's algorithm allows this\cite{marriage}.
 \newpage
 % ACKNOWLEDGMENT
 \section*{Acknowledgment}
-I would like to thank my adviser \ADVISER for her patience. Without it, this paper would not be realized.
+I would like to thank my adviser \ADVISER for her patience. Without it, this entire project would not be realized.
 % BIOGRAPHY
 \begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
     Matthew is a programmer that loves to solve real world problems. As a student of UPLB, he became interested in creating
