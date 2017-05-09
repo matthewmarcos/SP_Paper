@@ -1,6 +1,6 @@
 % Remove 12pt, change draftcls -> final when doing final.
 \documentclass[journal]{./IEEE/IEEEtran}
-\usepackage{cite,graphicx}
+\usepackage{cite, graphicx}
 \graphicspath{ {images/} }
 
 \newcommand{\SPTITLE}{Room-8! - A Matchmaking Application for Finding College Roommates}
@@ -17,7 +17,7 @@
 
 \markboth{CMSC 190 Special Problem, \ICS}{}
 \title{\SPTITLE}
-\author{\ADVISEE~and~\ADVISER%
+\author{\ADVISEE~and~\ADVISER
 \REMARK
 }
 \pubid{\copyright~2016~ICS \UPLB}
@@ -31,7 +31,13 @@
 
 % ABSTRACT
 \begin{abstract}
-This article explores the role and significance of roommates in a college student's development - from the initial adaptation with the roommate setting, to their academic performance and life after college. The importance of finding the proper roommates so that a student can maximize their psychological development, get higher grades, and develop open-mindedness is highlighted. A solution is proposed in the form of a web application that can help \UPLB students find mutually beneficial roommates for their college life. This solution also extends itself to solve the dorm-finding problem students experience at the start of every semester.
+    This article explores the role and significance of roommates in a college student's development - from the initial
+    adaptation with the roommate setting, to their academic performance and life after college. The importance of
+    finding the proper roommates so that a student can maximize their psychological development, get higher grades, and
+    develop open-mindedness is highlighted. A solution is proposed in the form of a web application that can help \UPLB
+    students find mutually beneficial roommates for their college life. This solution also extends itself to solve the
+    dorm-finding problem students experience at the start of every semester.
+
 \end{abstract}
 
 % INDEX TERMS
@@ -44,72 +50,158 @@ UPLB, University of the Philippines Los Ba\~{n}os, Roommate, Roommate matching
 % To be effective, the introduction should answer the questions ``Why and What For (Four)?" Expanded, these questions are----
 % \subsection{Why is the topic of interest?}
 
-% Expound more on the psychological importance of college
-Several studies support that social functioning during college plays a major role in a student's psychological development. According to Chickering and Reisser, one of the seven vectors of psychological developmental issues that college students face is cultivating mature interpersonal relationships\cite{chickering}. College-aged students also fall within Arnett's emerging adulthood stage, where identity formation is associated with friendships\cite{erb}. According to Erikson's stage theory of psychological development, a young adult prefers to seek intimacy in relationships rather than in isolation\cite{erikson}.
+    % Expound more on the psychological importance of college
+    Several studies support that social functioning during college plays a major role in a student's psychological
+    development. According to Chickering and Reisser, one of the seven vectors of psychological developmental issues
+    that college students face is cultivating mature interpersonal relationships\cite{chickering}. College-aged students
+    also fall within Arnett's emerging adulthood stage, where identity formation is associated with
+    friendships\cite{erb}. According to Erikson's stage theory of psychological development, a young adult prefers to
+    seek intimacy in relationships rather than in isolation\cite{erikson}. 
 
-Studies have linked social functioning to mental health and adjustment to college life \cite{erb}. A plethora of benefits such as psychological well-being, environmental mastery, personal growth, and self-acceptance have all been related to a student's ability to form meaningful relationships\cite{erb}. The conjunction between a person{'}s social capabilities and these benefits is so strong thatit can be used to predict how well the student will adjust to the new demands in college life. An individual who can develop good relationships in college has less problems \cite{erb}.
+    Studies have linked social functioning to mental health and adjustment to college life \cite{erb}. A plethora of
+    benefits such as psychological well-being, environmental mastery, personal growth, and self-acceptance have all been
+    related to a student's ability to form meaningful relationships\cite{erb}. The conjunction between a person{'}s
+    social capabilities and these benefits is so strong thatit can be used to predict how well the student will adjust
+    to the new demands in college life. An individual who can develop good relationships in college has less problems
+    \cite{erb}. 
+
     \subsection{Why College Roommate Relationships}
-    The goal is to make it easier for students to acquire these benefits with less guess work. Students have to develop better interpersonal relationships in college $-$ particularly roommate relationships because these are relationships that are widely experienced by many college students\cite{erb}. Roommates have frequent contact, negotiations of responsibilities and compromises about the living environment, which often include noise level, cleanliness level, sleep/waking hours, visitors, decorations, and bills\cite{erb}. These may become challenges when dealing with each other.
+    The goal is to make it easier for students to acquire these benefits with less guess work. Students have to develop
+    better interpersonal relationships in college $-$ particularly roommate relationships because these are
+    relationships that are widely experienced by many college students\cite{erb}. Roommates have frequent contact,
+    negotiations of responsibilities and compromises about the living environment, which often include noise level,
+    cleanliness level, sleep/waking hours, visitors, decorations, and bills\cite{erb}. These may become challenges when
+    dealing with each other. 
 
-    For many college students, many {``firsts"} add to the challenges of campus life. Usually, roommates are the first {``people of equal status"} they live with, compared to the parent-child relationship they usually experience at home\cite{erb}.
+    For many college students, many {``firsts"} add to the challenges of campus life. Usually, roommates are the first
+    {``people of equal status"} they live with, compared to the parent-child relationship they usually experience at
+    home\cite{erb}.
 
-    Unlike friendships, college students may often not choose roommates, causing personality mismatches. Many studies support that roommates, while having the potential to be a boon to a student, can also hinder a student from having a quality college life. According to Erb\cite{erb}, citing Liu\cite{liu}, in a 31,500 sample sized survey in the United States of America, 50.1\% of women and 44.1\% of men experienced “frequent” conflicts with roommates or housemates. In another survey in the same country, 5.6\% of undergraduates reported that difficulties with their roommates have hampered their academic endeavors\cite{erb}. For comparison, 4\% of American students said that alcohol did the same thing\cite{erb}.
+    Unlike friendships, college students may often not choose roommates, causing personality mismatches. Many studies
+    support that roommates, while having the potential to be a boon to a student, can also hinder a student from having
+    a quality college life. According to Erb\cite{erb}, citing Liu\cite{liu}, in a 31,500 sample sized survey in the
+    United States of America, 50.1\% of women and 44.1\% of men experienced “frequent” conflicts with roommates or
+    housemates. In another survey in the same country, 5.6\% of undergraduates reported that difficulties with their
+    roommates have hampered their academic endeavors\cite{erb}. For comparison, 4\% of American students said that
+    alcohol did the same thing\cite{erb}.
 
-    College roommates are targeted because it has been proven that college roommate relationships have a momentous effect on a student's performance before and after graduation. Although the college-roommate phenomenon has existed for a long time, there is only one paper that congregates empirical information about college-roommate relationships\cite{erb}.
+    College roommates are targeted because it has been proven that college roommate relationships have a momentous
+    effect on a student's performance before and after graduation. Although the college-roommate phenomenon has existed
+    for a long time, there is only one paper that congregates empirical information about college-roommate
+    relationships\cite{erb}. 
 
     \subsection{Proposed Solution}
     In order to maximize the number of compatible roommates on campus, a roommate-matching application will be made for
     UPLB. Unlike other roommate matching applications that exist today, the target of this application are students of
-    \UPLB who are looking for roommates. These students have different needs and preferences to working class people, so existing roommate matching applications cannot be used. In addition, there are no roommate matching applications that cater to the UPLB area or the Philippines. It is about time that one is created for campus. The aim of this Special Problem is to create a proof of concept of an application that can generate initial pairings for roommates.
+    \UPLB who are looking for roommates. These students have different needs and preferences to working class people, so
+    existing roommate matching applications cannot be used. In addition, there are no roommate matching applications
+    that cater to the UPLB area or the Philippines. It is about time that one is created for campus. The aim of this
+    Special Problem is to create a proof of concept of an application that can generate initial pairings for roommates.
+
 
 \pubidadjcol
 
-% Similar Applications
-\subsection{Similar Applications}
-There are existing roommate finding tools, which have more similarities than differences. They ask the user if they are
-looking for a place to stay, or if they have a room and are looking for someone to stay with them. Then, the user is
-bombarded with a long questionnaire that they have to fill out. It covers most of the basic criteria a person would have when looking for a room. The union of questions asked in both websites can be seen in the appendices.
+    % Similar Applications
+    \subsection{Similar Applications}
+    There are existing roommate finding tools, which have more similarities than differences. They ask the user if they are
+    looking for a place to stay, or if they have a room and are looking for someone to stay with them. Then, the user is
+    bombarded with a long questionnaire that they have to fill out. It covers most of the basic criteria a person would have
+    when looking for a room. The union of questions asked in both websites can be seen in the appendices. 
 
-% Both applications have similar questions, but have subtle insignificant differences. Roommates.com requires you to log in even before you start filling out the questionnaire. Roommie Match does not. However, in order to get a match, you will have to provide your credentials. Some people may find this surreptitious, as users will be forced togive their credentials after they have already filled out a long form.
-\subsubsection{Roommates.com}
-Roommate.com\cite{roommates.com} is a web application that caters to people looking for roommates in the United States of America. It can be accessed by going to \textit{www.roommates.com}. The home page enumerates cities where the application is most often used, such as Las Vegas, Houston, Atlanta, Los Angeles, New York, etc.
+        % Both applications have similar questions, but have subtle insignificant differences. Roommates.com requires you to log
+        % in even before you start filling out the questionnaire. Roommie Match does not. However, in order to get a match, you
+        % will have to provide your credentials. Some people may find this surreptitious, as users will be forced togive their
+        % credentials after they have already filled out a long form. 
+        \subsubsection{Roommates.com}
+        Roommate.com\cite{roommates.com} is a web application that caters to people looking for roommates in the United States
+        of America. It can be accessed by going to \textit{www.roommates.com}. The home page enumerates cities where the
+        application is most often used, such as Las Vegas, Houston, Atlanta, Los Angeles, New York, etc. 
 
-Users are required to create an account to use the service. Account creation is free regardless of your location. Among
-its listed features for free accounts include: photo profile, two-way matching, and the freedom to contact potential roommates. The application has a premium account option, which is required to read the messages sent to you by other users in the application. It costs \$5.99 for three days, roughly \$20 dollars for 30 days, and \$30 dollars for 60 days.
+        Users are required to create an account to use the service. Account creation is free regardless of your location. Among
+        its listed features for free accounts include: photo profile, two-way matching, and the freedom to contact potential
+        roommates. The application has a premium account option, which is required to read the messages sent to you by other
+        users in the application. It costs \$5.99 for three days, roughly \$20 dollars for 30 days, and \$30 dollars for 60
+        days. 
 
-Another feature of Roommates.com is the powersearch feature where the user can do searches with focused criteria. It is similar to Google's advanced search. The user will be redirected to a form that asks some questions (see appendix). Once the user has filled out the form, a list of matching roommates will appear. The user is able to see the profiles of the matched individuals, matching the information they wrote when creating an account.
+        Another feature of Roommates.com is the powersearch feature where the user can do searches with focused criteria. It is
+        similar to Google's advanced search. The user will be redirected to a form that asks some questions (see appendix). Once
+        the user has filled out the form, a list of matching roommates will appear. The user is able to see the profiles of the
+        matched individuals, matching the information they wrote when creating an account. 
 
-The only way to contact a matched person is by sending them a message with the built in messaging system. Sending messages is free, but reading them requires a premium account. Therefore, you need to be a paying user to fully utilize Roommates.com.
+        The only way to contact a matched person is by sending them a message with the built in messaging system. Sending
+        messages is free, but reading them requires a premium account. Therefore, you need to be a paying user to fully utilize
+        Roommates.com.
 
-Roommates.com is not feasible for use in UPLB because there are no locations near the \UPLB that come up in the list of city selections. The form also forces the user to specify their state - a piece of information that is irrelevant for people living outside the United States of America. The website has a lot of JavaScript alerts and prompts when navigating, which is bad for user experience \cite{UX1}. Finally, a free user won't be able to get any utility out of it without paying.
+        Roommates.com is not feasible for use in UPLB because there are no locations near the \UPLB that come up in the list of
+        city selections. The form also forces the user to specify their state - a piece of information that is irrelevant for
+        people living outside the United States of America. The website has a lot of JavaScript alerts and prompts when
+        navigating, which is bad for user experience \cite{UX1}. Finally, a free user won't be able to get any utility out of it
+        without paying.
 
-\subsubsection{Roommiematch.com}
-Roommiematch is another roommate match making web application that caters to some cities in Canada and the United States of America. Unlike Roommates.com, Roommiematch starts asking users about their preferences without requiring them to create an account. It also caters to fewer cities than Roommates.com.
+        \subsubsection{Roommiematch.com}
+        Roommiematch is another roommate match making web application that caters to some cities in Canada and the United States
+        of America. Unlike Roommates.com, Roommiematch starts asking users about their preferences without requiring them to
+        create an account. It also caters to fewer cities than Roommates.com.
 
-One of the strengths of Roommiematch.com over other web applications is that the forms are reviewed by actual humans before the pairing actually occurs. They claim that many of the registration forms get tossed, ensuring the legitimacy of its subscribers. Roommiematch also has a more modern user interface - it has a flat design, and elements are larger than those found in Roommates.com.
+        One of the strengths of Roommiematch.com over other web applications is that the forms are reviewed by actual humans
+        before the pairing actually occurs. They claim that many of the registration forms get tossed, ensuring the legitimacy
+        of its subscribers. Roommiematch also has a more modern user interface - it has a flat design, and elements are larger
+        than those found in Roommates.com.
 
-Its weakness is that the registration process is so long and you cannot save your previous answers. It was composed of over ten multiple choice questions, and four questions where you had to type the answer. You have to answer all of them in one go.
+        Its weakness is that the registration process is so long and you cannot save your previous answers. It was composed of
+        over ten multiple choice questions, and four questions where you had to type the answer. You have to answer all of them
+        in one go.
 
-A feature that may both be good and bad is that here is no way to view the profiles of people you are matched with except through the emails they send you. The reasoning behind this is so that less of the work goes to the user and their users' information does not get published everywhere. There is no need to revisit the website time after time. They claim that this is the feature that deters scammers from even registering.
+        A feature that may both be good and bad is that here is no way to view the profiles of people you are matched with
+        except through the emails they send you. The reasoning behind this is so that less of the work goes to the user and
+        their users' information does not get published everywhere. There is no need to revisit the website time after time.
+        They claim that this is the feature that deters scammers from even registering.
 
-Roomiematch can actually be considered a service that you subscribe to rather than an application. This is because there is no application you can interact with after filling out the form. Their team will email you updates every time you have a match, and it is up to you to contact your potential roommate.
+        Roomiematch can actually be considered a service that you subscribe to rather than an application. This is because there
+        is no application you can interact with after filling out the form. Their team will email you updates every time you
+        have a match, and it is up to you to contact your potential roommate. 
 
-\subsubsection{Tinder}
-Tinder is a mobile application in Android and iOS that has features that will be useful. It's purpose is not to match potential roommates, but to match potential dating partners. It is interesting because in 2015, it had an estimated 50 million users\cite{tinderstat2}, 80\% of which were were millenials, or individuals born after 1982 \cite{tinderstat}\cite{millenial}. It is intuitive to use, and has a use pattern that has been proven to be easily understood by millenials. This roommate matching application has to have a similar use-pattern to make it easier for the user.
+        \subsubsection{Tinder}
+        Tinder is a mobile application in Android and iOS that has features that will be useful. It's purpose is not to match
+        potential roommates, but to match potential dating partners. It is interesting because in 2015, it had an estimated 50
+        million users\cite{tinderstat2}, 80\% of which were were millenials, or individuals born after 1982
+        \cite{tinderstat}\cite{millenial}. It is intuitive to use, and has a use pattern that has been proven to be easily
+        understood by millenials. This roommate matching application has to have a similar use-pattern to make it easier for the
+        user. 
 
-When using Tinder, a user has to create an account. Tinder has the option of letting you log in with your Facebook account. Allowing Tinder to connect to your Facebook will allow it to get some data for your profile. There is an option to create an account without connecting it to Facebook. Once the account has been created, a user is prompted to fill out a few more fields, including a short description about oneself and a profile photo. The user can also make constraints that the application will consider when finding a match.
+        When using Tinder, a user has to create an account. Tinder has the option of letting you log in with your Facebook
+        account. Allowing Tinder to connect to your Facebook will allow it to get some data for your profile. There is an option
+        to create an account without connecting it to Facebook. Once the account has been created, a user is prompted to fill
+        out a few more fields, including a short description about oneself and a profile photo. The user can also make
+        constraints that the application will consider when finding a match.
 
-Tinder is all about the pictures and description a user entered. The user is shown a list of other users that may interest them. For every entry, the user can swipe right if they is interested in being matched with the user, and left if not. If two people are interested in each other, Tinder matches them together and the two users can communicate.
+        Tinder is all about the pictures and description a user entered. The user is shown a list of other users that may
+        interest them. For every entry, the user can swipe right if they is interested in being matched with the user, and left
+        if not. If two people are interested in each other, Tinder matches them together and the two users can communicate.
 
-\subsection{The Ideal Roommate Matching application}
-The ideal roommate match-making application has to be similar to existing ones, but tailored in such a way that it caters to the interests of UPLB students. Modern user experience strategies have to be followed. Its features have to be planned well to make it more relevant than the previous applications mentioned.
+    \subsection{The Ideal Roommate Matching application}
+    The ideal roommate match-making application has to be similar to existing ones, but tailored in such a way that it
+    caters to the interests of UPLB students. Modern user experience strategies have to be followed. Its features have
+    to be planned well to make it more relevant than the previous applications mentioned.
 
-There are many papers that list the factors that facilitate friendship. However, most of them are dependent on what happens during the first meeting or interaction. Some of the criteria are subjective, such as honesty, which  vary from person to person. Other criteria cannot be controlled or measured with the application, such as honesty, virtues, and trustworthiness. Due to the lack of an empirical basis to measure these constructs, it can be predicted that not all matched roommates will be friends.
+    There are many papers that list the factors that facilitate friendship. However, most of them are dependent on what
+    happens during the first meeting or interaction. Some of the criteria are subjective, such as honesty, which  vary
+    from person to person. Other criteria cannot be controlled or measured with the application, such as honesty,
+    virtues, and trustworthiness. Due to the lack of an empirical basis to measure these constructs, it can be predicted
+    that not all matched roommates will be friends.
 
-There are a few elements of friendship chemistry that can be used to assess match people together. Friendship chemistry can be broken down into five main elements - namely reciprocal candor, mutual interest, personableness, similarity, and physical attraction\cite{f_chemistry}. Each of these elements can also be broken down and measured relatively well. When people were asked about these elements, it showed that people who experienced friendship chemistry were analogous\cite{f_chemistry} - which reflects other research that friends are people with many similarities\cite{similar}. They claimed to have nearly identical values and morals, and they understand each other well\cite{f_chemistry}. Agreeability between the parties is also a significant factor when predicting friendship chemistry \cite{f_chemistry}.
+    There are a few elements of friendship chemistry that can be used to assess match people together. Friendship
+    chemistry can be broken down into five main elements - namely reciprocal candor, mutual interest, personableness,
+    similarity, and physical attraction\cite{f_chemistry}. Each of these elements can also be broken down and measured
+    relatively well. When people were asked about these elements, it showed that people who experienced friendship
+    chemistry were analogous\cite{f_chemistry} - which reflects other research that friends are people with many
+    similarities\cite{similar}. They claimed to have nearly identical values and morals, and they understand each other
+    well\cite{f_chemistry}. Agreeability between the parties is also a significant factor when predicting friendship
+    chemistry \cite{f_chemistry}.
 
-A ideal roommate matchmaking application must be able to match users based on similarities. But it must still be able to match people who are not exactly identical.
-% Metrics for the ideal Roommate matchmaking application
+    A ideal roommate matchmaking application must be able to match users based on similarities. But it must still be
+    able to match people who are not exactly identical.
+    % Metrics for the ideal Roommate matchmaking application
 
 
 % MATERIALS AND METHODS
@@ -125,30 +217,64 @@ The application will consist of a database, the server, and the client. A simpli
 \caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
 \end{figure}
 
-For the database management system (DBMS), MySQL will be used. It is a very versatile DBMS and is easy to set up in most machines \cite{mysqlpage}. Its popularity is the result of its good documentation and support for any issues that may arise \cite{mysqlpage}. The use of Database Triggers will be leveraged to run the recommender system - the part of the application that does the initial recommendation of roommates. Since the application is model-heavy, complicated transactions have to be performed, hence the need for stored procedures and stored functions. Such features have simple to limiting implementations in NoSQL DBMS.
+For the database management system (DBMS), MySQL will be used. It is a very versatile DBMS and is easy to set up in most
+machines \cite{mysqlpage}. Its popularity is the result of its good documentation and support for any issues that may
+arise \cite{mysqlpage}. The use of Database Triggers will be leveraged to run the recommender system - the part of the
+application that does the initial recommendation of roommates. Since the application is model-heavy, complicated
+transactions have to be performed, hence the need for stored procedures and stored functions. Such features have simple
+to limiting implementations in NoSQL DBMS.
 
-The application will be hosted with a Nodejs server with the Expressjs microframework. They were designed with user productivity in mind without limiting scalability and expressiveness on the code. It is also good at handling IO events from the user, as it is event driven, meaning you can focus on the application logic.
+The application will be hosted with a Nodejs server with the Expressjs microframework. They were designed with user
+productivity in mind without limiting scalability and expressiveness on the code. It is also good at handling IO events
+from the user, as it is event driven, meaning you can focus on the application logic.
 
-For the client side frameworks, Reactjs with Redux will handle the view. A flux architecture will be enforced because it is common today. React is easy to use for this kind of system because its separation of concerns make it easy to maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data changes. The User Interface will use MaterializeCSS because it is lightweight and simple.
+For the client side frameworks, Reactjs with Redux will handle the view. A flux architecture will be enforced because it
+is common today. React is easy to use for this kind of system because its separation of concerns make it easy to
+maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data
+changes. The User Interface will use MaterializeCSS because it is lightweight and simple.
 
 \subsection{The Recommender System}
-A recommender system is used by applications to predict information and offer content to its users\cite{katarya}. Youtube, for example, uses a recommender system to suggest videos that a viewer might find interesting. Amazon uses a recommender system to advertise products to different shoppers.
+A recommender system is used by applications to predict information and offer content to its users\cite{katarya}.
+Youtube, for example, uses a recommender system to suggest videos that a viewer might find interesting. Amazon uses a
+recommender system to advertise products to different shoppers.
 
-A recommender system will be used as part of the server that creates suggestions for roommates. This is the most important part of the application. It should be able to rate the compatibility of a user against all other users, and give a score based on how similar they are. The results of the recommender system will be shown to the user, who has the liberty of \textit{accepting} or \textit{rejecting} the suggestions. If two users \textit{accept} each other, they have the possibility of being matched - depending on the score they received. This recommender system will be unsupervised and will run everytime a user modifies their account details, or a user creates an account.
+A recommender system will be used as part of the server that creates suggestions for roommates. This is the most
+important part of the application. It should be able to rate the compatibility of a user against all other users, and
+give a score based on how similar they are. The results of the recommender system will be shown to the user, who has the
+liberty of \textit{accepting} or \textit{rejecting} the suggestions. If two users \textit{accept} each other, they have
+the possibility of being matched - depending on the score they received. This recommender system will be unsupervised
+and will run everytime a user modifies their account details, or a user creates an account.
 
 \subsection{User workflow Pattern}
 
-To use \APPNAME , the user must first create an account. The questions listed in the appendix are not going to be asked. Instead, the user will be asked for their name, age, address, phone number, and email. After an account is created, the user can sign in and use the application.
+To use \APPNAME , the user must first create an account. The questions listed in the appendix are not going to be asked.
+Instead, the user will be asked for their name, age, address, phone number, and email. After an account is created, the
+user can sign in and use the application.
 
-To actually get some pairings, the user must fill out their roommate preferences. These are broken down into seven forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers will be the criteria used by the application to make initial matches. Each question has an option called ``Don't care". This is the option selected by default. If it is selected, that question will not be considered as a constraint when making the matchings.
+To actually get some pairings, the user must fill out their roommate preferences. These are broken down into seven
+forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers
+will be the criteria used by the application to make initial matches. Each question has an option called ``Don't care".
+This is the option selected by default. If it is selected, that question will not be considered as a constraint when
+making the matchings.
 
-The user also has to fill out the discovery settings. It contains three questions: \textit{How strict do you want us to be when looking for a match?}, and \textit{Are you currently looking for a roommate?}. The first question can be answerable by any integer from 1 - 100. It will serve as the threshold score when displaying matches for the user. The second question is a flag. If it is set, the application will start searching for matches to present to the user. If it is unset, the user will not show in anybody's list of matchings or pairings.
+The user also has to fill out the discovery settings. It contains three questions: \textit{How strict do you want us to
+be when looking for a match?}, and \textit{Are you currently looking for a roommate?}. The first question can be
+answerable by any integer from 1 - 100. It will serve as the threshold score when displaying matches for the user. The
+second question is a flag. If it is set, the application will start searching for matches to present to the user. If it
+is unset, the user will not show in anybody's list of matchings or pairings.
 
-The matches will come as a list of profiles. Initially, the users cannot see the contact details of ``matched" people. However, they can see the preferences and answers of their ``matches". If a match is interesting, a user can choose to accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches can come by. If two people accept each other, they are then paired.
+The matches will come as a list of profiles. Initially, the users cannot see the contact details of ``matched" people.
+However, they can see the preferences and answers of their ``matches". If a match is interesting, a user can choose to
+accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches
+can come by. If two people accept each other, they are then paired.
 
-Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application. Paired people can finalize the roommate pairing. This will unset their discovery setting of ``Are you looking for a roommate". A user can see the profile of the person he/she is finalized with any time.
+Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will
+come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application.
+Paired people can finalize the roommate pairing. This will unset their discovery setting of ``Are you looking for a
+roommate". A user can see the profile of the person he/she is finalized with any time.
 
-If a pair disagrees, they can choose to discard that pairing. The discarded pair will appear in the user's blacklist and will not be matched. A user can remove blacklisted users.
+If a pair disagrees, they can choose to discard that pairing. The discarded pair will appear in the user's blacklist and
+will not be matched. A user can remove blacklisted users.
 
 \begin{figure}[h]
 \centering
@@ -159,15 +285,29 @@ If a pair disagrees, they can choose to discard that pairing. The discarded pair
 
 % How matches are scored
 \subsection{How Matches are Scored}
-In order to create potential matches, the compatibility between two users have to be measured. The algorithm initially gives each pair a score of zero. Each question in the questionnaire is worth ten points. If two users have a similar answer, then ten is added to the score. If at least one of the users has selected ``Don't care" for a question, then it is assumed that the user is willing to adjust in that criteria, hence a score of 10 will be added for that question. For questions that provide a slider from 0-10 (e.g. ``Cleanliness level"), then the score that will be added for that question will be $10 - (user A's answer - user B's Answer)$.
+In order to create potential matches, the compatibility between two users have to be measured. The algorithm initially
+gives each pair a score of zero. Each question in the questionnaire is worth ten points. If two users have a similar
+answer, then ten is added to the score. If at least one of the users has selected ``Don't care" for a question, then it
+is assumed that the user is willing to adjust in that criteria, hence a score of 10 will be added for that question. For
+questions that provide a slider from 0-10 (e.g. ``Cleanliness level"), then the score that will be added for that
+question will be $10 - (user A's answer - user B's Answer)$.
 
-This algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for a room.
+This algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for
+a room.
 
 % Gale-Shapley's Algorithm
 \subsection{Gale-Shapley's Algorithm in Room-8!}
-Gale-Shapley's Algorithm is used to match two elements from different sets. It solves what is commonly known as the Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to universities, while considering their preferences and the preferences of the university\cite{irving}. The result of this algorithm is a set of stable one-to-one correspondences between the two sets. A stable match is a match where there is no pair of users that both prefer each other but are unmatched\cite{marriage}. In this application, the input of this algorithm will be the initial scores of user groups (People who have a room and people without a room). Each user in both groups has an ordered list of users from the other group that are sorted by their score from the matching algorithm. The output will be the list of stable matches between the two groups.
+Gale-Shapley's Algorithm is used to match two elements from different sets. It solves what is commonly known as the
+Stable Marriage problem. It was introduced by Gale and Shapley when they were trying to assign aspirants to
+universities, while considering their preferences and the preferences of the university\cite{irving}. The result of this
+algorithm is a set of stable one-to-one correspondences between the two sets. A stable match is a match where there is
+no pair of users that both prefer each other but are unmatched\cite{marriage}. In this application, the input of this
+algorithm will be the initial scores of user groups (People who have a room and people without a room). Each user in
+both groups has an ordered list of users from the other group that are sorted by their score from the matching
+algorithm. The output will be the list of stable matches between the two groups.
 
-User pairings whose matching score is below the threshold will not be considered by the algorithm. This means that the matching is unacceptable. Gale-Shapley's algorithm allows this\cite{marriage}.
+User pairings whose matching score is below the threshold will not be considered by the algorithm. This means that the
+matching is unacceptable. Gale-Shapley's algorithm allows this\cite{marriage}.
 
 
 
@@ -186,7 +326,10 @@ User pairings whose matching score is below the threshold will not be considered
 I would like to thank my adviser \ADVISER for her patience. Without it, this paper would not be realized.
 % BIOGRAPHY
 \begin{biography}[{\includegraphics{./yourPicture.eps}}]{\ADVISEE}
-Matthew is a programmer that loves to solve real world problems. As a student of UPLB, he became interested in creating web applications that remedies the daily problems Filipinos experience. On his free time, he likes studying new technologies and reading books on history, technology, and the sciences. He is a fan of sci-fi books like those by Michael Crichton, and Douglas Preston and Lincoln Child.
+    Matthew is a programmer that loves to solve real world problems. As a student of UPLB, he became interested in creating
+    web applications that remedies the daily problems Filipinos experience. On his free time, he likes studying new
+    technologies and reading books on history, technology, and the sciences. He is a fan of sci-fi books like those by
+    Michael Crichton, and Douglas Preston and Lincoln Child.
 \end{biography}
 
 
