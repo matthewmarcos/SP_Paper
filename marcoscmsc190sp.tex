@@ -288,7 +288,7 @@ will not be matched. A user can remove blacklisted users.
 \subsection{How Matches are Scored}
 In order to create potential matches, the compatibility between two users have to be measured. For the remainder of the
 section, the user that needs a room will be called \textit{user1} and the user that has a room will be called
-\textit{user2}. The algorithm initially gives each pair a score of zero. The application has 17 criteria for arbitrating
+\textit{user2}. The algorithm initially gives each pair a score of zero. The application has 16 criteria for arbitrating
 two users' compatibility. Each criteria in the questionnaire is worth a certain amount of points.  This scoring
 algorithm will be applied to the cartesian product of the users that have a room and the users that are looking for a
 room. The criteria as as follows:
@@ -296,9 +296,12 @@ room. The criteria as as follows:
     \subsubsection{Cleanliness}
         The cleanliness criterion is determined by 2 fields from each user:
         \begin{itemize}
-                \item my\textunderscore cleanliness - A user's self-rating of their cleanliness level.
+                \item my\textunderscore cleanliness - A user's self-rating of their cleanliness level. This is an
+                    integer between 1 to 10 inclusive. By default (on account creation), this number is intialized to 1.
                 \item preferred\textunderscore cleanliness - A user's preferred cleanliness level for their
-                    potential roommate.
+                    potential roommate. This is an integer between 1 to 10 inclusive. By default (on account creation),
+                    this number is intialized to 1.
+
         \end{itemize}
 
         The preferred\textunderscore cleanliness of user1 will be compared to user2's my\textunderscore cleanliness and
@@ -318,10 +321,10 @@ room. The criteria as as follows:
 
     \subsubsection{Smoker}
         The smoking score is determined by comparing user1's smoking preference user2's smoking profile and vice versa.
-        It is similar to the Cleanliness score in that it uses two variables from each user to determine the score.
-        If user1's preference to a smoking partner is equal to user2's smoking profile, 5 is added to the score. If
-        user2's preference to a smoking partner is equal to user1's smoking profile, another 5 is added. This criterion gives a
-        maximum of 10 points.
+        The possible choices are ``Yes", ``No", and ``Do not care". It is similar to the Cleanliness score in that it
+        uses two variables from each user to determine the score. If user1's preference to a smoking partner is equal
+        to user2's smoking profile, 5 is added to the score. If user2's preference to a smoking partner is equal to
+        user1's smoking profile, another 5 is added. This criterion gives a maximum of 10 points.
 
     \subsubsection{Sex}
         The sex score is determined exactly the same way as the smoking score is determined.
@@ -361,8 +364,8 @@ room. The criteria as as follows:
     \subsubsection{General Location}
         This criterion is used to match the general location of both users. The users' entries for general location are
         then fuzzy matched to check how similar the user entrues are. The fuzzy matching returns a number as a percent
-        of 100. That percentage match is multiplied as a percent of 10 and is returned as the score. A 100\% match is
-        given a score of 10.
+        of 100. That percentage match is multiplied as a percent of 10 and is returned as the score. For example, a 100\% match is
+        given a score of 10 while a 65\% match is given a score of 6.5.
 
     \subsubsection{Utilities Cost}
         The Utilities Cost is a criterion used to determine whether or not a room is within a user's budget.
@@ -398,11 +401,11 @@ room. The criteria as as follows:
         \end{enumerate}
 
         For each of the aforementioned subcriteria, a score of 10 is added if user1's answer is equal to user2's answer.
-        An answer of 'Do not care' awards a score of 10 for that subcriterion.
+        An answer of ``Do not care" awards a score of 10 for that subcriterion.
 
 
     \subsubsection{Speed}
-        This criterion is only used if user1 or user2 selects ``Yes" for the internet subcriterion in the
+        This criterion is only used if user1 and user2 selects ``Yes" for the internet subcriterion in the
         Utilities criteria. This criterion compares the internet speed requirement of both users. A score of 10 is
         given if user2's answer is greater than or equal to user1's answer because it means that the room is able to
         provide for the internet speed requirement of user1.
@@ -412,7 +415,7 @@ room. The criteria as as follows:
         hopes to provide a cordial understanding when lights and sounds should be turned off.
 
         The users are given the options of Morning, Evening, Both, Do not care. If either one of the users answers ``Do
-        not care", it is assumed that the user is willing to adjust to the study habits of the other user. For such a
+        not care" or ``Both", it is assumed that the user is willing to adjust to the study habits of the other user. For such a
         situiation, a score of 10 will be given. Otherwise, a score of 10 will only be given if both users have exactly
         the same answer.
 
@@ -450,11 +453,30 @@ algorithm is a set of stable one-to-one correspondences between the two sets. A 
 no pair of users that both prefer each other but are unmatched\cite{marriage}. In this application, the input of this
 algorithm will be the initial scores of user groups (People who have a room and people without a room). Each user in
 both groups has an ordered list of users from the other group that are sorted by their score from the matching
-algorithm. The output will be the list of stable matches between the two groups.
+algorithm. The output will be the list of stable matches between the two groups. Using this algorithm implies that the
+application is limited to a 1-1 matching.
 
-User pairings whose matching score is below the threshold will not be considered by the algorithm. This means that the
-matching is unacceptable. Gale-Shapley's algorithm allows this\cite{marriage}.
+To add human intervention in the application, only users who accepted each other will be considered for the Gale-Shapley
+matching.
 
+The pseudocode of the algorithm that is used in Room-8! is as follows:
+
+\begin{verbatim}
+function stableMatching {
+    Initialize all m ∈ M and w ∈ W to free
+    while ∃ free man m who still has a woman w to propose to {
+        w = first woman on m’s list to whom m has not yet proposed
+            if w is free
+                (m, w) become engaged
+            else some pair (m', w) already exists
+                if w prefers m to m'
+                    m' becomes free
+                    (m, w) become engaged
+                else
+                    (m', w) remain engaged
+    }
+}
+\end{verbatim}
 
 
 
