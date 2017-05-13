@@ -230,9 +230,10 @@ productivity in mind without limiting scalability and expressiveness on the code
 from the user, as it is event driven, meaning you can focus on the application logic.
 
 For the client side frameworks, Reactjs with Redux will handle the view. A flux architecture will be enforced because it
-is common today. React is easy to use for this kind of system because its separation of concerns make it easy to
-maintain (and develop). It claims to be faster because it applies minimal changes to the DOM everytime your data
-changes. The User Interface will use MaterializeCSS because it is lightweight and simple.
+is common today. The flux architecture will be implemented with Redux for state management. React is easy to use for
+this kind of system because its separation of concerns make it easy to maintain (and develop). It claims to be faster
+because it applies minimal changes to the DOM everytime your data changes. The User Interface will use MaterializeCSS
+because it is lightweight and simple.
 
 \subsection{The Recommender System}
 A recommender system is used by applications to predict information and offer content to its users\cite{katarya}.
@@ -243,39 +244,36 @@ A recommender system will be used as part of the server that creates suggestions
 important part of the application. It should be able to rate the compatibility of a user against all other users, and
 give a score based on how similar they are. The results of the recommender system will be shown to the user, who has the
 liberty of \textit{accepting} or \textit{rejecting} the suggestions. If two users \textit{accept} each other, they have
-the possibility of being matched - depending on the score they received. This recommender system will be unsupervised
-and will run everytime a user modifies their account details, or a user creates an account.
+the possibility of being paired - depending on the score they received.
+% This recommender system will be unsupervised
+% and will run everytime a user modifies their account details, or a user creates an account.
 
 \subsection{User workflow Pattern}
 
 To use \APPNAME , the user must first create an account. The questions listed in the appendix are not going to be asked.
-Instead, the user will be asked for their name, age, address, phone number, and email. After an account is created, the
+Instead, the user will be asked for their username, nickname, and email. After an account is created, the
+% Instead, the user will be asked for their name, age, address, phone number, and email. After an account is created, the
 user can sign in and use the application.
 
-To actually get some pairings, the user must fill out their roommate preferences. These are broken down into seven
-forms, listed down in the appendix. The user does not need to answer all of the questions in one go. The user's answers
-will be the criteria used by the application to make initial matches. Each question has an option called ``Don't care".
-This is the option selected by default. If it is selected, that question will not be considered as a constraint when
-making the matchings.
+To actually get some pairings, the user must modify his discovery settings to allow being added to the recommender
+system. Even though there are default roommate preference settings, users have tod modify them to their personal liking
+in order to get the best results. These are broken down into seven forms, listed down in the appendix. The user does not
+need to answer all of the questions in one go. The user's answers will be the criteria used by the application to make
+initial matches. 
 
-The user also has to fill out the discovery settings. It contains three questions: \textit{How strict do you want us to
-be when looking for a match?}, and \textit{Are you currently looking for a roommate?}. The first question can be
-answerable by any integer from 1 - 100. It will serve as the threshold score when displaying matches for the user. The
-second question is a flag. If it is set, the application will start searching for matches to present to the user. If it
-is unset, the user will not show in anybody's list of matchings or pairings.
+The user also has to fill out the discovery settings. It contains one question: \textit{Are you currently looking for a
+roommate?}. The question is a flag. If it is set, the application will start searching for matches to present to the
+user. If it is unset, the user will not show in anybody's list of matchings or pairings.
 
 The matches will come as a list of profiles. Initially, the users cannot see the contact details of ``matched" people.
 However, they can see the preferences and answers of their ``matches". If a match is interesting, a user can choose to
 accept it or not, much like in Tinder where the user swipes left or right. As new users are being created, more matches
-can come by. If two people accept each other, they are then paired.
+can come by. If two people accept each other, they are then eligible for the pairing.
 
-Paired people can now see each others' contact details. They can also use the in-app chat system. These pairings will
-come as a list ordered by the similarities of their profiles. New pairings can come up as people use the application.
-Paired people can finalize the roommate pairing. This will unset their discovery setting of ``Are you looking for a
-roommate". A user can see the profile of the person he/she is finalized with any time.
-
-If a pair disagrees, they can choose to discard that pairing. The discarded pair will appear in the user's blacklist and
-will not be matched. A user can remove blacklisted users.
+Paired people can now see each others' contact details. These pairings will come as a list ordered by the similarities
+of their profiles. New pairings can come up as people use the application.  Paired people can finalize the roommate
+pairing. This will unset their discovery setting of ``Are you looking for a roommate". A user can see the profile of the
+person he/she is finalized with any time.
 
 \begin{figure}[h]
 \centering
@@ -454,32 +452,29 @@ no pair of users that both prefer each other but are unmatched\cite{marriage}. I
 algorithm will be the initial scores of user groups (People who have a room and people without a room). Each user in
 both groups has an ordered list of users from the other group that are sorted by their score from the matching
 algorithm. The output will be the list of stable matches between the two groups. Using this algorithm implies that the
-application is limited to a 1-1 matching.
-
-To add human intervention in the application, only users who accepted each other will be considered for the Gale-Shapley
-matching.
+application is limited to a 1-1 matching. To add human intervention in the application, only users who accepted each
+other will be considered for the Gale-Shapley matching.
 
 The pseudocode of the algorithm that is used in Room-8! is as follows:
-
+\newpage
 \begin{verbatim}
 function stableMatching {
+    let M be the set of people looking for a room
+    let W be the set of people who have a room
     Initialize all m ∈ M and w ∈ W to free
-    while ∃ free man m who still has a woman w to propose to {
-        w = first woman on m’s list to whom m has not yet proposed
-            if w is free
-                (m, w) become engaged
-            else some pair (m', w) already exists
-                if w prefers m to m'
-                    m' becomes free
-                    (m, w) become engaged
-                else
-                    (m', w) remain engaged
+    while ∃ free m who still has a w to compare to {
+        w = first person on m’s list of remaining people to compare
+        if w is free
+            (m, w) become paired
+        else some pair (m', w) already exists
+            if w prefers m to m'
+                m' becomes free
+                (m, w) become paired
+            else
+                (m', w) remain paired
     }
 }
 \end{verbatim}
-
-
-
 % \section{Proof of methods down here}
 
 % RESULTS AND DISCUSSION
@@ -581,7 +576,6 @@ I would like to thank my adviser \ADVISER for her patience. Without it, this ent
 
     \item When
     \begin{itemize}
-        \item Summers only?
         \item Start date?
         \item Duration of stay?
     \end{itemize}
@@ -595,7 +589,7 @@ I would like to thank my adviser \ADVISER for her patience. Without it, this ent
             \item Is there a dryer?
             \item Is there a place to dry my clothes?
         \end{itemize}
-        \item Can I cook? (Check all that apply)
+        \item Can I cook?
         \begin{itemize}
             \item Gas Stove
             \item Electric Stove
@@ -603,52 +597,38 @@ I would like to thank my adviser \ADVISER for her patience. Without it, this ent
             \item Water kettle
         \end{itemize}
         \item Internet connection
+        \item Do you torrent?
         \begin{itemize}
             \item What is the minimum speed requirement?
-            \item Do you torrent?
         \end{itemize}
     \end{itemize}
 
     \item Hobbies
-    \begin{itemize}
-        \item Are you a gamer?
-        \item Are you an activist?
-        \item Are you into sports
-    \end{itemize}
-
     \item Lifestyle
     \begin{itemize}
         \item Are you religious? / Are you a part of a cult?
         \item Do you urinate on the shower?
-        \item What is an acceptable noise level for you? (1 - 10)
         \item Do you drink Alcohol?
         \item Do you smoke?
         \item Do you prefer to study in the early mornings or evenings?
         \item Do you have guests?
-        \item Are you willing to share a bathroom?
         \item Do you have guests come over?
         \item Do you live with pets?
-        \begin{itemize}
-            \item Small caged animals (birds, hamsters)
-            \item Not small caged animals (dogs)
-        \end{itemize}
-        \item Are you willing to share a bathroom?
     \end{itemize}
 
     \item Location Preferences
     \begin{itemize}
-        \item Nearby Restaurants? (5 minute walk)
-        \item How far from UPLB (How long a walk)
-        \item General Area (List Barangays)
+        \item Nearby Restaurants?
+        \item How far from UPLB (minutes travel time)
+        \item General Area (Textarea)
     \end{itemize}
 
+    \item Cost
     \item Misc
     \begin{itemize}
         \item Study area for guests?
-        \item Easily Accessible
-        \item Cost
-        \item Payment scheme
         \item Curfew
+        \item Curfew Time
     \end{itemize}
 \end{enumerate}
 
