@@ -482,7 +482,45 @@ function stableMatching {
 
 % CONCLUSION AND FUTURE WORK
 % \section{Conclusion and Future Work}
+\section{Results and Discussion}
+Room-8! was implemented with a web front end that consumes a basic API. The front end shows the scores and values
+computed from the scoring system from the server, and displays the differences between the user and their potential
+partner.consumes its basic API. The front end shows the scores and values computed from the scoring system and displays
+the differences between the user and their potential partner.
 
+In its current implementation, Room-8!'s recommender algorithm has to be manually triggered by making GET requests to
+certain routes. The recommender system currently comes in two parts: The scoring algorithm, and the pairing algorithm,
+both of which were previously discussed.
+
+    \subsection{Room-8! Usage}
+        \subsubsection{Account Creation}
+        In order to use Room-8!, a student must create an account for free. Account creation is done by navigating to
+        to the register page where the user has to fill out his username, email, nickname, and preferred password.
+        \begin{figure*}
+                \includegraphics[width=\textwidth]{register.png}
+                \caption{Register Page}
+                \label{Registration Page}
+        \end{figure*}
+        \subsubsection{Logging In}
+        When a user has created an account, he has to log in to use the functionalities of Room-8!.
+        \begin{figure*}
+                \includegraphics[width=\textwidth]{login.png}
+                \caption{Log in Page}
+                \label{Log in Page}
+        \end{figure*}
+
+        \subsubsection{Adjusting Profile Settings}
+        In order to find the optimal roommate for a user, they must first fill out their profile page and edit their
+        roommate preferences.
+        \begin{figure*}
+                \includegraphics[width=\textwidth]{profileindex.png}
+                \caption{The profile index page contains the summary of your profile settings}
+                \label{Profile Index Page}
+        \end{figure*}
+
+        \subsubsection{Adjusting Preference Settings}
+        \subsubsection{Adjusting Discovery Settings}
+        \subsubsection{Dashboard}
 \newpage
 % ACKNOWLEDGMENT
 \section*{Acknowledgment}
