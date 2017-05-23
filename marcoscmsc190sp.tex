@@ -1,5 +1,5 @@
 % Remove 12pt, change draftcls -> final when doing final.
-\documentclass[journal]{./IEEE/IEEEtran}
+\documentclass[journal]{IEEEtran}
 \usepackage{cite, graphicx}
 \graphicspath{ {images/} }
 
@@ -215,6 +215,7 @@ architecture is shown below.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{Architecture}
+%\includegraphics[scale=\linewidth]{Architecture}
 \caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
 \end{figure}
 
@@ -598,7 +599,7 @@ I would like to thank my adviser \ADVISER for her patience. Without it, this ent
 \newpage
 % BIBLIOGRAPHY
 % \bibliography{./cs190-ieee}
-\bibliographystyle{./IEEE/IEEEtran}
+\bibliographystyle{IEEEtran}
 \bibliography{marcoscmsc190sp}
 % \nocite{*}
 

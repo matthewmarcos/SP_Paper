@@ -1,0 +1,456 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./marcoscmsc190sp.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 14 language(s) loaded.
+(./IEEE/IEEEtran.cls
+
+LaTeX Warning: You have requested document class `./IEEE/IEEEtran',
+               but the document class provides `IEEEtran'.
+
+Document Class: IEEEtran 2002/11/18 revision V1.6b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- The source comments contain changelog notes.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- This is a 10 point document.
+) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+No file marcoscmsc190sp.aux.
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+
+LaTeX Warning: Citation `chickering' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 58.
+
+
+LaTeX Warning: Citation `erikson' on page 1 undefined on input line 59.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 66.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 78.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Citation `liu' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 86.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `roommates.com' on page 2 undefined on input line 116.
+
+
+LaTeX Warning: Citation `UX1' on page 2 undefined on input line 138.
+
+
+LaTeX Warning: Citation `tinderstat2' on page 2 undefined on input line 167.
+
+
+LaTeX Warning: Citation `tinderstat' on page 2 undefined on input line 168.
+
+
+LaTeX Warning: Citation `millenial' on page 2 undefined on input line 168.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 195.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 197.
+
+
+LaTeX Warning: Citation `similar' on page 2 undefined on input line 198.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 199.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 200.
+
+[2] <images/Architecture.png, id=15, 407.5225pt x 224.84pt>
+<use images/Architecture.png>
+
+LaTeX Warning: Citation `mysqlpage' on page 3 undefined on input line 222.
+
+
+LaTeX Warning: Citation `mysqlpage' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `katarya' on page 3 undefined on input line 239.
+
+<images/Workflow.png, id=16, 345.29pt x 678.535pt> <use images/Workflow.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./images/Architecture.png>]
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 309.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 309.
+
+
+Overfull \hbox (13.30272pt too wide) detected at line 310
+\OML/cmm/m/it/10 magnetism[] \OT1/cmr/m/n/10 = 10 \OMS/cmsy/m/n/10 ^^@ \OML/cmm
+/m/it/10 user\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 s[]cleanliness \OMS/cmsy/m/n/1
+0 ^^@ \OML/cmm/m/it/10 user\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 s[]preference
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 313.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 313.
+
+
+Overfull \hbox (13.30272pt too wide) detected at line 314
+\OML/cmm/m/it/10 magnetism[] \OT1/cmr/m/n/10 = 10 \OMS/cmsy/m/n/10 ^^@ \OML/cmm
+/m/it/10 user\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 s[]cleanliness \OMS/cmsy/m/n/1
+0 ^^@ \OML/cmm/m/it/10 user\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 s[]preference
+[4 <./images/Workflow.png>]
+
+LaTeX Warning: Citation `irving' on page 5 undefined on input line 449.
+
+
+LaTeX Warning: Citation `marriage' on page 5 undefined on input line 451.
+
+[5] (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Overfull \hbox (42.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 let M be the set of people looking for a room[] 
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 let W be the set of people who have a room[] 
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 while  free m who still has a w to compare to {[] 
+
+Overfull \hbox (144.0pt too wide) in paragraph at lines 477--477
+[]        \OT1/pcr/m/n/10 w = first person on ms list of remaining people to co
+mpare[] 
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 477--477
+[]        \OT1/pcr/m/n/10 else some pair (m', w) already exists[] 
+<images/register.png, id=30, 1371.1225pt x 671.50874pt>
+<use images/register.png> <images/login.png, id=32, 1371.1225pt x 655.44875pt>
+<use images/login.png>
+<images/profileindex.png, id=33, 1371.1225pt x 656.4525pt>
+<use images/profileindex.png>
+<images/profileedit.png, id=34, 1371.1225pt x 1564.84625pt>
+<use images/profileedit.png>
+<images/prefindex.png, id=35, 1371.1225pt x 1208.515pt>
+<use images/prefindex.png>
+<images/prefwhen.png, id=36, 1371.1225pt x 605.26125pt>
+<use images/prefwhen.png>
+<images/prefcost.png, id=37, 1371.1225pt x 605.26125pt>
+<use images/prefcost.png>
+<images/preflocation.png, id=38, 1371.1225pt x 605.26125pt>
+<use images/preflocation.png>
+<images/prefutilities.png, id=39, 1371.1225pt x 693.59125pt>
+<use images/prefutilities.png>
+<images/preflifestyle.png, id=40, 1371.1225pt x 605.26125pt>
+<use images/preflifestyle.png>
+<images/prefsex.png, id=41, 1371.1225pt x 605.26125pt>
+<use images/prefsex.png>
+<images/prefmisc.png, id=42, 1371.1225pt x 605.26125pt>
+<use images/prefmisc.png> [6]
+<./yourPicture-eps-converted-to.pdf, id=47, 73.27374pt x 91.34125pt>
+<use ./yourPicture-eps-converted-to.pdf>
+Overfull \hbox (1.00356pt too wide) in paragraph at lines 590--590
+ [][] 
+<use ./yourPicture-eps-converted-to.pdf>
+Overfull \hbox (1.00356pt too wide) in paragraph at lines 590--590
+ [][] 
+[7 <./images/register.png> <./images/login.png> <./yourPicture-eps-converted-to
+.pdf>]
+No file marcoscmsc190sp.bbl.
+[8 <./images/profileindex.png>] [9 <./images/profileedit.png>] [10 <./images/pr
+efindex.png>] [11 <./images/prefwhen.png> <./images/prefcost.png>] [12 <./image
+s/preflocation.png> <./images/prefutilities.png>] [13 <./images/preflifestyle.p
+ng> <./images/prefsex.png>] [14 <./images/prefmisc.png>] (./marcoscmsc190sp.aux
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/time
+s/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on marcoscmsc190sp.pdf (14 pages, 695712 bytes).
+Transcript written on marcoscmsc190sp.log.
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+The top-level auxiliary file: marcoscmsc190sp.aux
+The style file: ./IEEE/IEEEtran.bst
+Database file #1: marcoscmsc190sp.bib
+-- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in erikson
+Warning--empty journal in liu
+Warning--empty journal in marriage
+Warning--empty year in marriage
+
+Done.
+(There were 4 warnings)
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./marcoscmsc190sp.tex
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 14 language(s) loaded.
+(./IEEE/IEEEtran.cls
+
+LaTeX Warning: You have requested document class `./IEEE/IEEEtran',
+               but the document class provides `IEEEtran'.
+
+Document Class: IEEEtran 2002/11/18 revision V1.6b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- The source comments contain changelog notes.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- This is a 10 point document.
+) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))))
+(./marcoscmsc190sp.aux)
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+
+LaTeX Warning: Citation `chickering' on page 1 undefined on input line 56.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 58.
+
+
+LaTeX Warning: Citation `erikson' on page 1 undefined on input line 59.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 66.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 78.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Citation `liu' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 86.
+
+
+LaTeX Warning: Citation `erb' on page 1 undefined on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd) [1{/var/lib/texmf/fo
+nts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `roommates.com' on page 2 undefined on input line 116.
+
+
+LaTeX Warning: Citation `UX1' on page 2 undefined on input line 138.
+
+
+LaTeX Warning: Citation `tinderstat2' on page 2 undefined on input line 167.
+
+
+LaTeX Warning: Citation `tinderstat' on page 2 undefined on input line 168.
+
+
+LaTeX Warning: Citation `millenial' on page 2 undefined on input line 168.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 195.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 197.
+
+
+LaTeX Warning: Citation `similar' on page 2 undefined on input line 198.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 199.
+
+
+LaTeX Warning: Citation `f_chemistry' on page 2 undefined on input line 200.
+
+[2] <images/Architecture.png, id=15, 407.5225pt x 224.84pt>
+<use images/Architecture.png>
+
+LaTeX Warning: Citation `mysqlpage' on page 3 undefined on input line 222.
+
+
+LaTeX Warning: Citation `mysqlpage' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `katarya' on page 3 undefined on input line 239.
+
+<images/Workflow.png, id=16, 345.29pt x 678.535pt> <use images/Workflow.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./images/Architecture.png>]
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 309.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 309.
+
+
+Overfull \hbox (13.30272pt too wide) detected at line 310
+\OML/cmm/m/it/10 magnetism[] \OT1/cmr/m/n/10 = 10 \OMS/cmsy/m/n/10 ^^@ \OML/cmm
+/m/it/10 user\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 s[]cleanliness \OMS/cmsy/m/n/1
+0 ^^@ \OML/cmm/m/it/10 user\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 s[]preference
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 313.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 313.
+
+
+Overfull \hbox (13.30272pt too wide) detected at line 314
+\OML/cmm/m/it/10 magnetism[] \OT1/cmr/m/n/10 = 10 \OMS/cmsy/m/n/10 ^^@ \OML/cmm
+/m/it/10 user\OT1/cmr/m/n/10 2[]\OML/cmm/m/it/10 s[]cleanliness \OMS/cmsy/m/n/1
+0 ^^@ \OML/cmm/m/it/10 user\OT1/cmr/m/n/10 1[]\OML/cmm/m/it/10 s[]preference
+[4 <./images/Workflow.png>]
+
+LaTeX Warning: Citation `irving' on page 5 undefined on input line 449.
+
+
+LaTeX Warning: Citation `marriage' on page 5 undefined on input line 451.
+
+[5] (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd)
+Overfull \hbox (42.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 let M be the set of people looking for a room[] 
+
+Overfull \hbox (24.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 let W be the set of people who have a room[] 
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 477--477
+[]    \OT1/pcr/m/n/10 while  free m who still has a w to compare to {[] 
+
+Overfull \hbox (144.0pt too wide) in paragraph at lines 477--477
+[]        \OT1/pcr/m/n/10 w = first person on ms list of remaining people to co
+mpare[] 
+
+Overfull \hbox (18.0pt too wide) in paragraph at lines 477--477
+[]        \OT1/pcr/m/n/10 else some pair (m', w) already exists[] 
+<images/register.png, id=30, 1371.1225pt x 671.50874pt>
+<use images/register.png> <images/login.png, id=32, 1371.1225pt x 655.44875pt>
+<use images/login.png>
+<images/profileindex.png, id=33, 1371.1225pt x 656.4525pt>
+<use images/profileindex.png>
+<images/profileedit.png, id=34, 1371.1225pt x 1564.84625pt>
+<use images/profileedit.png>
+<images/prefindex.png, id=35, 1371.1225pt x 1208.515pt>
+<use images/prefindex.png>
+<images/prefwhen.png, id=36, 1371.1225pt x 605.26125pt>
+<use images/prefwhen.png>
+<images/prefcost.png, id=37, 1371.1225pt x 605.26125pt>
+<use images/prefcost.png>
+<images/preflocation.png, id=38, 1371.1225pt x 605.26125pt>
+<use images/preflocation.png>
+<images/prefutilities.png, id=39, 1371.1225pt x 693.59125pt>
+<use images/prefutilities.png>
+<images/preflifestyle.png, id=40, 1371.1225pt x 605.26125pt>
+<use images/preflifestyle.png>
+<images/prefsex.png, id=41, 1371.1225pt x 605.26125pt>
+<use images/prefsex.png>
+<images/prefmisc.png, id=42, 1371.1225pt x 605.26125pt>
+<use images/prefmisc.png> [6]
+<./yourPicture-eps-converted-to.pdf, id=47, 73.27374pt x 91.34125pt>
+<use ./yourPicture-eps-converted-to.pdf>
+Overfull \hbox (1.00356pt too wide) in paragraph at lines 590--590
+ [][] 
+<use ./yourPicture-eps-converted-to.pdf>
+Overfull \hbox (1.00356pt too wide) in paragraph at lines 590--590
+ [][] 
+[7 <./images/register.png> <./images/login.png> <./yourPicture-eps-converted-to
+.pdf>]
+! Interruption.
+<to be read again> 
+                   \endgroup 
+l.598 \newpage
+              
+? 
