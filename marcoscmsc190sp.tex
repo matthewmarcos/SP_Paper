@@ -522,89 +522,25 @@ the differences between the user and their potential partner.
 
 In its current implementation, Room-8!'s recommender algorithm has to be manually triggered by making GET requests to
 certain routes. The recommender system currently comes in two parts: The scoring algorithm, and the pairing algorithm,
-both of which were previously discussed.
+both of which were previously discussed. The screenshots of each section can be found in the appendix.
 
     \subsection{Room-8! Usage}
         \subsubsection{Account Creation}
         In order to use Room-8!, a student must create an account for free. Account creation is done by navigating to
         to the register page where the user has to fill out his username, email, nickname, and preferred password.
-        \begin{figure*}
-                \includegraphics[scale=0.5]{register.png}
-                \caption{Register Page}
-                \label{Registration Page}
-        \end{figure*}
         \subsubsection{Logging In}
         When a user has created an account, he has to log in to use the functionalities of Room-8!.
-        \begin{figure*}
-                \includegraphics[scale=0.5]{login.png}
-                \caption{Log in Page}
-                \label{Log in Page}
-        \end{figure*}
-
         \subsubsection{Adjusting Profile Settings}
         In order to find the optimal roommate for a user, they must first fill out their profile page and edit their
         roommate preferences.
-        \begin{figure*}
-                \includegraphics[scale=0.5]{profileindex.png}
-                \caption{The profile index page contains the summary of your profile settings}
-                \label{Profile Index Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{profileedit.png}
-                \caption{You can edit your profile through the profile edit page}
-                \label{Profile Edit Page}
-        \end{figure*}
-
         \subsubsection{Adjusting Preference Settings}
         To ensure a close match, the user can adjust their roommate preference settings. The preference settings are
         separated into 7 sections: When, Cost, Location, Utilities, Lifestyle, Sex, and Misc. The questions that will be
         asked for each section will be detailed below.
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefindex.png}
-                \caption{Preferences Index Page}
-                \label{Preferences Index Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefwhen.png}
-                \caption{Preferences When Page}
-                \label{Preferences When Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefcost.png}
-                \caption{Preferences Cost Page}
-                \label{Preferences Cost Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{preflocation.png}
-                \caption{Preferences Location Page}
-                \label{Preferences Location Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefutilities.png}
-                \caption{Preferences Utilities Page}
-                \label{Preferences Utilities Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{preflifestyle.png}
-                \caption{Preferences Lifestyle Page}
-                \label{Preferences Lifestyle Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefsex.png}
-                \caption{Preferences Sex Page}
-                \label{Preferences Sex Page}
-        \end{figure*}
-        \begin{figure*}
-                \includegraphics[scale=0.5]{prefmisc.png}
-                \caption{Preferences Misc Page}
-                \label{Preferences Misc Page}
-        \end{figure*}
-
         \subsubsection{Adjusting Discovery Settings}
         If a user wants to be included in the matching algorithm, they have to toggle themselves as discoverable in the
         discovery settings. If they are not toggled as discoverable, then they will not be included in the scoring
         algorithm.
-
         \subsubsection{Dashboard}
         The dashboard contains the information pertinent to the user at any given stage through the roommate finding
         process. At first, if the user does not have any matches, then the dashboard will state that there are no
@@ -781,4 +717,100 @@ I would like to thank my adviser \ADVISER for her patience. Without it, this ent
     \end{itemize}
 \end{enumerate}
 
+\section{Screenshots in Room-8!}
+% \begin{figure}[h]
+% \centering
+% \includegraphics[scale=0.5]{Architecture}
+% \caption{This is the general architecture of the program. Technologies to be used are labelled appropriately}
+% \end{figure}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[scale=0.17]{register}
+        \caption{Register Page}
+        \label{Registration Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{login.png}
+            \caption{Log in Page}
+            \label{Log in Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{profileindex.png}
+            \caption{The profile index page contains the summary of your profile settings}
+            \label{Profile Index Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{profileedit.png}
+            \caption{You can edit your profile through the profile edit page}
+            \label{Profile Edit Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefindex.png}
+            \caption{Preferences Index Page}
+            \label{Preferences Index Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefwhen.png}
+            \caption{Preferences When Page}
+            \label{Preferences When Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefcost.png}
+            \caption{Preferences Cost Page}
+            \label{Preferences Cost Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{preflocation.png}
+            \caption{Preferences Location Page}
+            \label{Preferences Location Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefutilities.png}
+            \caption{Preferences Utilities Page}
+            \label{Preferences Utilities Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{preflifestyle.png}
+            \caption{Preferences Lifestyle Page}
+            \label{Preferences Lifestyle Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefsex.png}
+            \caption{Preferences Sex Page}
+            \label{Preferences Sex Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{prefmisc.png}
+            \caption{Preferences Misc Page}
+            \label{Preferences Misc Page}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{discovery.png}
+            \caption{Changing the discovery settings}
+            \label{Discovery Settings}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{matches.png}
+            \caption{Selecting matches you want to pair with}
+            \label{Selecting Matches}
+    \end{figure}
+    \begin{figure}
+        \centering
+            \includegraphics[scale=0.17]{pair.png}
+            \caption{You have a pair}
+            \label{Pair}
+    \end{figure}
 \end{document}
