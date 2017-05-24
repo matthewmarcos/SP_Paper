@@ -1,6 +1,8 @@
 % Remove 12pt, change draftcls -> final when doing final.
 \documentclass[journal]{IEEEtran}
-\usepackage{cite, graphicx}
+\usepackage{cite, graphicx, amsmath, algorithmicx}
+\usepackage[]{algorithm2e}
+\usepackage[noend]{algpseudocode}
 \graphicspath{ {images/} }
 
 \newcommand{\SPTITLE}{Room-8! - A Matchmaking Application for Finding College Roommates}
@@ -307,11 +309,17 @@ room. The criteria as as follows:
         vice versa. A magnetism variable is assigned for each comparison, which can be computed as
 
         \begin{equation}
-            magnetism_1 = 10-user1's\textunderscore cleanliness - user2's\textunderscore preference
+            \begin{split}
+                magnetism_1 = 10 - user1\textunderscore cleanliness - \\
+                user2\textunderscore preference
+            \end{split}
         \end{equation}
         and
         \begin{equation}
-            magnetism_2 = 10-user2's\textunderscore cleanliness - user1's\textunderscore preference
+            \begin{split}
+                magnetism_2 = 10 - user2\textunderscore cleanliness - \\
+                user1\textunderscore preference
+            \end{split}
         \end{equation}
 
         The total cleanliness is the arithmetic mean of both magnetism variables
@@ -458,24 +466,47 @@ other will be considered for the Gale-Shapley matching.
 
 The pseudocode of the algorithm that is used in Room-8! is as follows:
 \newpage
-\begin{verbatim}
-function stableMatching {
-    let M be the set of people looking for a room
-    let W be the set of people who have a room
-    Initialize all m ∈ M and w ∈ W to free
-    while ∃ free m who still has a w to compare to {
-        w = first person on m’s list of remaining people to compare
-        if w is free
-            (m, w) become paired
-        else some pair (m', w) already exists
-            if w prefers m to m'
-                m' becomes free
-                (m, w) become paired
-            else
-                (m', w) remain paired
+\begin{algorithm}
+\caption{Gale Shapley in Room-8!}\label{gale-shapley}
+    \KwData {
+        \par let M be the set of people looking for a room\;
+        \par let W be the set of people who have a room\;
     }
-}
-\end{verbatim}
+
+    Initialize all m in M and w in W to free\;
+
+    \While { free m who still has a w to compare to } {
+        w = first person on m’s list of remaining people to compare\par
+        \eIf { w is free } {
+                (m, w) become paired
+        } {
+            \eIf { w prefers m to m' } {
+                    m' becomes free
+                    (m, w) become paired
+            } {
+                (m', w) remain paired
+            }
+        }
+    }
+\end{algorithm}
+% \begin{verbatim}
+% function stableMatching {
+    % let M be the set of people looking for a room
+    % let W be the set of people who have a room
+    % Initialize all m ∈ M and w ∈ W to free
+    % while ∃ free m who still has a w to compare to {
+        % w = first person on m’s list of remaining people to compare
+        % if w is free
+            % (m, w) become paired
+        % else some pair (m', w) already exists
+            % if w prefers m to m'
+                % m' becomes free
+                % (m, w) become paired
+            % else
+                % (m', w) remain paired
+    % }
+% }
+% \end{verbatim}
 % \section{Proof of methods down here}
 
 % RESULTS AND DISCUSSION
@@ -498,14 +529,14 @@ both of which were previously discussed.
         In order to use Room-8!, a student must create an account for free. Account creation is done by navigating to
         to the register page where the user has to fill out his username, email, nickname, and preferred password.
         \begin{figure*}
-                \includegraphics[width=\textwidth]{register.png}
+                \includegraphics[scale=0.5]{register.png}
                 \caption{Register Page}
                 \label{Registration Page}
         \end{figure*}
         \subsubsection{Logging In}
         When a user has created an account, he has to log in to use the functionalities of Room-8!.
         \begin{figure*}
-                \includegraphics[width=\textwidth]{login.png}
+                \includegraphics[scale=0.5]{login.png}
                 \caption{Log in Page}
                 \label{Log in Page}
         \end{figure*}
@@ -514,12 +545,12 @@ both of which were previously discussed.
         In order to find the optimal roommate for a user, they must first fill out their profile page and edit their
         roommate preferences.
         \begin{figure*}
-                \includegraphics[width=\textwidth]{profileindex.png}
+                \includegraphics[scale=0.5]{profileindex.png}
                 \caption{The profile index page contains the summary of your profile settings}
                 \label{Profile Index Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{profileedit.png}
+                \includegraphics[scale=0.5]{profileedit.png}
                 \caption{You can edit your profile through the profile edit page}
                 \label{Profile Edit Page}
         \end{figure*}
@@ -529,42 +560,42 @@ both of which were previously discussed.
         separated into 7 sections: When, Cost, Location, Utilities, Lifestyle, Sex, and Misc. The questions that will be
         asked for each section will be detailed below.
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefindex.png}
+                \includegraphics[scale=0.5]{prefindex.png}
                 \caption{Preferences Index Page}
                 \label{Preferences Index Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefwhen.png}
+                \includegraphics[scale=0.5]{prefwhen.png}
                 \caption{Preferences When Page}
                 \label{Preferences When Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefcost.png}
+                \includegraphics[scale=0.5]{prefcost.png}
                 \caption{Preferences Cost Page}
                 \label{Preferences Cost Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{preflocation.png}
+                \includegraphics[scale=0.5]{preflocation.png}
                 \caption{Preferences Location Page}
                 \label{Preferences Location Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefutilities.png}
+                \includegraphics[scale=0.5]{prefutilities.png}
                 \caption{Preferences Utilities Page}
                 \label{Preferences Utilities Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{preflifestyle.png}
+                \includegraphics[scale=0.5]{preflifestyle.png}
                 \caption{Preferences Lifestyle Page}
                 \label{Preferences Lifestyle Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefsex.png}
+                \includegraphics[scale=0.5]{prefsex.png}
                 \caption{Preferences Sex Page}
                 \label{Preferences Sex Page}
         \end{figure*}
         \begin{figure*}
-                \includegraphics[width=\textwidth]{prefmisc.png}
+                \includegraphics[scale=0.5]{prefmisc.png}
                 \caption{Preferences Misc Page}
                 \label{Preferences Misc Page}
         \end{figure*}
@@ -582,6 +613,24 @@ both of which were previously discussed.
         preferences of the match. The user can then opt to accept or reject the matching. Once a sufficient number of
         users have been either accepted or rejected, the user may then wait for the system to determine a pair. Once the
         application has determined a pair, then the dashboard will display the pair for the user.
+
+\section{Conclusion and Future Work}
+With the main goal of potentially improving student benefits in UPLB, a proof-of-concept roommate matchmaking
+application was made that could pair two similar users using the Gale-Shapley Algorithm. 
+
+There are many improvements that can be added to Room-8! to make it deplyable, most of which are simple application
+logic: There could be a google maps implementation that will make it easier to show the location of dormitories. If such
+a system existed, then a better scoring system for the general location can be implemented. Second, users should be
+given the idea to unpair and block paired users. It would be to provide protection against harassment. A rating system
+for each user would also be great in order to make the feedback more genuine.
+
+As for the scoring algorithm itself, even social media networks these days continuously improve, and as such, there
+could be incremental improvements to the scoring algorithm. Perhaps a psychology major could determine whether or not
+the criteria being tested is appropriate, and whether or not the scoring system is suitable for such criteria.
+
+Determining the success of Room-8! will only come after deployment. After a semester of its initial use, a statistician
+may determine whether or not the application has provided a statistically significant improvement on the grades of the
+students. An economist may determine whether or not the improvement is worth the costs of deployment and maintenance.
 
 \newpage
 % ACKNOWLEDGMENT
